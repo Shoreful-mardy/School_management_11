@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="{{ asset('backend/images/favicon.ico')}}">
 
-    <title>Sunny Admin - Log in </title>
+    <title>Easy Admin - Log in </title>
   
     <!-- Vendors Style {{ asset('backend/')}} -->
     <link rel="stylesheet" href="{{ asset('backend/css/vendors_css.css')}}">
@@ -67,7 +67,7 @@
                                     <!-- /.col -->
                                     <div class="col-6">
                                      <div class="fog-pwd text-right">
-                                        <a href="javascript:void(0)" class="text-white hover-info"><i class="ion ion-locked"></i> Forgot pwd?</a><br>
+                                        <a href="{{ route('password.request') }}" class="text-white hover-info"><i class="ion ion-locked"></i> Forgot pwd?</a><br>
                                       </div>
                                     </div>
                                     <!-- /.col -->
@@ -89,7 +89,7 @@
                             </div>
                             
                             <div class="text-center">
-                                <p class="mt-15 mb-0 text-white">Don't have an account? <a href="auth_register.html" class="text-info ml-5">Sign Up</a></p>
+                                <p class="mt-15 mb-0 text-white">Don't have an account? <a href="{{ route('register')}}" class="text-danger ml-5">Sign Up</a></p>
                             </div>
                         </div>
                     </div>
