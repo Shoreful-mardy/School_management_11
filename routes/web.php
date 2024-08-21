@@ -23,6 +23,8 @@ Route::middleware('auth')->group(function () {
     // User Manage All Route
     Route::controller(UserController::class)->group(function () {
         Route::get('view/user', 'ViewUser')->name('user.view');
+        Route::get('add/user', 'AddUser')->name('add.user');
+        Route::post('store/user', 'StoreUser')->name('store.user');
     });
 
 

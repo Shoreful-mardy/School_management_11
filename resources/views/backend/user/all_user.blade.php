@@ -1,6 +1,10 @@
  @extends('admin.admin_master')
  @section('admin')
-
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
  <div class="content-wrapper">
 	  <div class="container-full">
 		<!-- Content Header (Page header) -->
@@ -32,7 +36,7 @@
 			 <div class="box">
 				<div class="box-header with-border d-flex justify-content-between">
 				  <h3 class="box-title">All User</h3>
-				  <a href="" class="btn btn-success" style="float: right;"><i class="ti-plus">Add User</i></a>
+				  <a href="{{ route('add.user') }}" class="btn btn-success" style="float: right;"><i class="ti-plus">Add User</i></a>
 				</div>
 
 
