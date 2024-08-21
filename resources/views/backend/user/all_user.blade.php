@@ -32,7 +32,7 @@
 			 <div class="box">
 				<div class="box-header with-border d-flex justify-content-between">
 				  <h3 class="box-title">All User</h3>
-				  <button class="btn btn-info" type="button"> <span><i class="ti-plus"></i> Add User</span> </button>
+				  <a href="" class="btn btn-success" style="float: right;"><i class="ti-plus">Add User</i></a>
 				</div>
 
 
@@ -43,28 +43,34 @@
 					  <table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th>Sl</th>
+								<th width="5%">Sl</th>
+								<th>Role</th>
 								<th>Name</th>
 								<th>Email</th>
-								<th>Created Date</th>
+								<th width="25%">Action</th>
 							</tr>
 						</thead>
 						<tbody>
 							@foreach($user as $key => $item)
 							<tr>
 								<td>{{ $key+1}}</td>
+								<td></td>
 								<td>{{ $item->name}}</td>
 								<td>{{ $item->email}}</td>
-								<td>{{ $item->created_at->format('d/m/Y') }}</td>
+								<td>
+									<a href="" class="btn btn-info">Edit</a>
+									<a href="" class="btn btn-danger">Delete</a>
+								</td>
 							</tr>
 							@endforeach
 						</tbody>
 						<tfoot>
 							<tr>
 								<th>Sl</th>
+								<th>Role</th>
 								<th>Name</th>
 								<th>Email</th>
-								<th>Created Date</th>
+								<th>Action</th>
 							</tr>
 						</tfoot>
 					  </table>
