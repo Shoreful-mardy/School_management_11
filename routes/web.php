@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\UserController;
-
+use App\Http\Controllers\Backend\UserProfileController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -28,7 +28,12 @@ Route::middleware('auth')->group(function () {
         Route::get('edit/user/{id}', 'EditUser')->name('edit.user');
         Route::post('update/user', 'UpdateUser')->name('update.user');
         Route::get('delete/user/{id}', 'DeleteUser')->name('delete.user');
+    });
 
+    // Profile Manage All Route
+    // User Manage All Route
+    Route::controller(UserProfileController::class)->group(function () {
+        Route::get('profile/view', 'ProfileView')->name('profile.view');
     });
 
 
