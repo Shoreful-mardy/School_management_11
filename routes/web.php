@@ -25,6 +25,9 @@ Route::middleware('auth')->group(function () {
         Route::get('view/user', 'ViewUser')->name('user.view');
         Route::get('add/user', 'AddUser')->name('add.user');
         Route::post('store/user', 'StoreUser')->name('store.user');
+        Route::get('edit/user/{id}', 'EditUser')->name('edit.user');
+        Route::post('update/user', 'UpdateUser')->name('update.user');
+
     });
 
 
