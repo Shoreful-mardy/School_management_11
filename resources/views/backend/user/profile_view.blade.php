@@ -40,30 +40,30 @@
 
 					</div>
 					<div class="widget-user-image">
-					  <img class="rounded-circle" src="../images/user3-128x128.jpg" alt="User Avatar">
+					  <img class="rounded-circle" src="{{ (!empty($user->photo))? url('upload/users_images/'.$user->photo) : url('upload/no_image.jpg')}}" alt="User Avatar">
 					</div>
 					<div class="box-footer">
 					  <div class="row">
 						<div class="col-sm-4">
 						  <div class="description-block">
-							<h5 class="description-header">12K</h5>
-							<span class="description-text">FOLLOWERS</span>
+							<h5 class="description-header">Contact NO</h5>
+							<span class="description-text">{{ $user->phone}}</span>
 						  </div>
 						  <!-- /.description-block -->
 						</div>
 						<!-- /.col -->
 						<div class="col-sm-4 br-1 bl-1">
 						  <div class="description-block">
-							<h5 class="description-header">550</h5>
-							<span class="description-text">FOLLOWERS</span>
+							<h5 class="description-header">Address</h5>
+							<span class="description-text">{{ $user->address}}</span>
 						  </div>
 						  <!-- /.description-block -->
 						</div>
 						<!-- /.col -->
 						<div class="col-sm-4">
 						  <div class="description-block">
-							<h5 class="description-header">158</h5>
-							<span class="description-text">TWEETS</span>
+							<h5 class="description-header">Gender</h5>
+							<span class="description-text">{{ $user->gender}}</span>
 						  </div>
 						  <!-- /.description-block -->
 						</div>
