@@ -33,7 +33,7 @@
 			<div class="box-body">
 			  <div class="row">
 				<div class="col">
-					<form method="POST" action="{{ route('store.user') }}">
+					<form method="POST" action="{{ route('update.password') }}">
 						@csrf
 					  <div class="row">
 						<div class="col-12">

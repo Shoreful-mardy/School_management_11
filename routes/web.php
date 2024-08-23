@@ -39,6 +39,7 @@ Route::middleware('auth')->group(function () {
 
         //Password Changed Route
         Route::get('password/edit', 'PasswordView')->name('password.view');
+        Route::post('password/update', 'PasswordUpdate')->name('update.password');
     });
 
 
