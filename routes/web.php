@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\UserProfileController;
 use App\Http\Controllers\Backend\Setup\StudentClassController;
+use App\Http\Controllers\Backend\Setup\StudentYearController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -43,7 +44,7 @@ Route::middleware('auth')->group(function () {
         Route::post('password/update', 'PasswordUpdate')->name('update.password');
     });
 
-    // Setup Management All Route
+    // Setup Management Student Class  All Route
     Route::controller(StudentClassController::class)->group(function () {
         Route::get('student/class', 'StudentClass')->name('student.class');
         Route::get('add/student/class', 'AddStudentClass')->name('add.student.class');
@@ -51,6 +52,11 @@ Route::middleware('auth')->group(function () {
         Route::get('edit/student/class/{id}', 'EditStudentClass')->name('edit.student.class');
         Route::post('update/student/class', 'UpdateStudentClass')->name('update.student.class');
         Route::get('delete/student/class/{id}', 'DeleteStudentClass')->name('delete.student.class');
+    });
+
+     // Setup Management Student Year All Route
+    Route::controller(StudentYearController::class)->group(function () {
+        Route::get('student/year', 'StudentYear')->name('student.year');
     });
 
 
