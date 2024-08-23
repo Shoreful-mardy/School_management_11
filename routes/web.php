@@ -48,6 +48,8 @@ Route::middleware('auth')->group(function () {
         Route::get('student/class', 'StudentClass')->name('student.class');
         Route::get('add/student/class', 'AddStudentClass')->name('add.student.class');
         Route::post('store/student/class', 'StoreStudentClass')->name('store.student.class');
+        Route::get('edit/student/class/{id}', 'EditStudentClass')->name('edit.student.class');
+        Route::post('update/student/class', 'UpdateStudentClass')->name('update.student.class');
     });
 
 

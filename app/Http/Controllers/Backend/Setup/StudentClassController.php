@@ -25,7 +25,7 @@ class StudentClassController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|unique:student_classes,name',
         ]);
-        
+
         StudentClass::insert([
             'name' => $request->name,
         ]);
@@ -39,6 +39,29 @@ class StudentClassController extends Controller
 
 
     }//End Method
+
+    public function EditStudentClass($id){
+
+       $data = StudentClass::find($id);
+       return view('Backend.setup.student_class.edit_student_class',compact('data'));
+
+    }//End Method
+
+    public function UpdateStudentClass(Request $request){
+
+        $id = $request->id;
+
+        StudentClass::findOrFail($id)->update([
+            'name' => $request->name,
+        ]);
+        $notification = array(
+            'message' => 'Student Class Updated successfully!',
+            'alert-type' => 'success'
+        );
+
+       return redirect()->route('student.class')->with($notification);
+
+    }//End Methon
 
 
 
