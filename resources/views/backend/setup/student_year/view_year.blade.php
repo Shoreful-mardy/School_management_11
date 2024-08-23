@@ -31,7 +31,7 @@
 			 <div class="box">
 				<div class="box-header with-border d-flex justify-content-between">
 				  <h3 class="box-title">Student Year List</h3>
-				  <a href="{{ route('add.student.class') }}" class="btn btn-success" style="float: right;"><i class="ti-plus">Add Student Year</i></a>
+				  <a href="{{ route('add.student.year') }}" class="btn btn-success" style="float: right;"><i class="ti-plus">Add Student Year</i></a>
 				</div>
 
 
@@ -53,7 +53,7 @@
 								<td>{{ $key+1}}</td>
 								<td>{{ $item->name}}</td>
 								<td>
-									<a href="{{ route('edit.student.class',$item->id) }}" class="btn btn-info">Edit</a>
+									<a href="{{ route('edit.student.year',$item->id) }}" class="btn btn-info">Edit</a>
 									<a href="{{ route('delete.student.class',$item->id) }}" id="delete" class="btn btn-danger">Delete</a>
 								</td>
 							</tr>

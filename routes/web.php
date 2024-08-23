@@ -57,6 +57,9 @@ Route::middleware('auth')->group(function () {
      // Setup Management Student Year All Route
     Route::controller(StudentYearController::class)->group(function () {
         Route::get('student/year', 'StudentYear')->name('student.year');
+        Route::get('add/student/year', 'AddStudentyear')->name('add.student.year');
+        Route::post('store/student/year', 'StoreStudentYear')->name('store.student.year');
+        Route::get('edit/student/year/{id}', 'EditStudentYear')->name('edit.student.year');
     });
 
 
