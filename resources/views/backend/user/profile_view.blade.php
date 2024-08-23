@@ -32,7 +32,7 @@
 					<!-- Add the bg color to the header using any of the bg-* classes -->
 					<div class="widget-user-header bg-black" style="background: url('../images/gallery/full/10.jpg') center center;">
 					  <h3 class="widget-user-username">{{$user->name}}</h3>
-					  <a href="{{ route('add.user') }}" class="btn btn-success" style="float: right;"><i class="fa fa-edit">Edit Profile</i></a>
+					  <a href="{{ route('edit.profile') }}" class="btn btn-success" style="float: right;"><i class="fa fa-edit">Edit Profile</i></a>
 					  <h6 class="widget-user-username">{{$user->email}}</h6>
 					  
 					  <h6 class="widget-user-desc">{{ $user->user_type}}</h6>

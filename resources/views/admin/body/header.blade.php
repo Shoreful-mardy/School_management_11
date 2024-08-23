@@ -101,10 +101,16 @@
 			</ul>
 		  </li>	
 		  
+		  @php
+
+		  $id = Auth::user()->id;
+		  $user = App\Models\User::find($id);
+
+		  @endphp
 	      <!-- User Account-->
           <li class="dropdown user user-menu">	
 			<a href="#" class="waves-effect waves-light rounded dropdown-toggle p-0" data-toggle="dropdown" title="User">
-				<img src="{{asset('no_image.jpg') }}" alt="">
+				<img src="{{ (!empty($user->photo))? url('upload/users_images/'.$user->photo) : url('upload/no_image.jpg')}}" alt="">
 			</a>
 			<ul class="dropdown-menu animated flipInX">
 			  <li class="user-body">
