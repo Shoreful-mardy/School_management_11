@@ -52,6 +52,10 @@ class UserProfileController extends Controller
 
     }//End Method
 
+    public function PasswordView(){
+        return view('backend.user.edit_password');
+    }//End Method
+
 
 
 
