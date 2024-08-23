@@ -33,7 +33,7 @@
 			<div class="box-body">
 			  <div class="row">
 				<div class="col">
-					<form method="POST" action="{{ route('update.student.class') }}">
+					<form method="POST" action="{{ route('update.student.year') }}">
 						@csrf
 						<input type="hidden" name="id" value="{{ $data->id }}">
 					  <div class="row">

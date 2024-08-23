@@ -40,4 +40,35 @@ class StudentYearController extends Controller
        return view('Backend.setup.student_year.edit_student_year',compact('data'));
 
     }//End Method
+    public function UpdateStudentYear(Request $request){
+
+        $validatedData = $request->validate([
+            'name' => 'required|unique:student_years,name',
+        ]);
+
+        $id = $request->id;
+
+
+        StudentYear::findOrFail($id)->update([
+            'name' => $request->name,
+        ]);
+        $notification = array(
+            'message' => 'Student Year Updated successfully!',
+            'alert-type' => 'success'
+        );
+
+       return redirect()->route('student.year')->with($notification);
+
+    }//End Methon
+    public function DeleteStudentYear($id){
+
+        StudentYear::find($id)->delete();
+        $notification = array(
+            'message' => 'Student Year Deleted successfully!',
+            'alert-type' => 'success'
+        );
+
+       return redirect()->back()->with($notification);
+
+    }//End Method
 }

@@ -60,6 +60,8 @@ Route::middleware('auth')->group(function () {
         Route::get('add/student/year', 'AddStudentyear')->name('add.student.year');
         Route::post('store/student/year', 'StoreStudentYear')->name('store.student.year');
         Route::get('edit/student/year/{id}', 'EditStudentYear')->name('edit.student.year');
+        Route::post('update/student/year', 'UpdateStudentYear')->name('update.student.year');
+        Route::get('delete/student/year/{id}', 'DeleteStudentYear')->name('delete.student.year');
     });
 
 
