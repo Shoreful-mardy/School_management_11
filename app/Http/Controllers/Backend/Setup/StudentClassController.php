@@ -14,6 +14,32 @@ class StudentClassController extends Controller
         return view('Backend.setup.student_class.view_class',compact('data'));
     }//End Method
 
+    public function AddStudentClass(){
+
+        return view('Backend.setup.student_class.add_student_class');
+
+    }//End Method
+
+    public function StoreStudentClass(Request $request){
+
+        $validatedData = $request->validate([
+            'name' => 'required|unique:student_classes,name',
+        ]);
+        
+        StudentClass::insert([
+            'name' => $request->name,
+        ]);
+
+        $notification = array(
+            'message' => 'Student Class created successfully!',
+            'alert-type' => 'success'
+        );
+
+       return redirect()->route('student.class')->with($notification);
+
+
+    }//End Method
+
 
 
 

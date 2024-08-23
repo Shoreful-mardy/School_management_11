@@ -46,6 +46,8 @@ Route::middleware('auth')->group(function () {
     // Setup Management All Route
     Route::controller(StudentClassController::class)->group(function () {
         Route::get('student/class', 'StudentClass')->name('student.class');
+        Route::get('add/student/class', 'AddStudentClass')->name('add.student.class');
+        Route::post('store/student/class', 'StoreStudentClass')->name('store.student.class');
     });
 
 

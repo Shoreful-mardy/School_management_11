@@ -6,7 +6,7 @@
 		<div class="content-header">
 			<div class="d-flex align-items-center">
 				<div class="mr-auto">
-					<h3 class="page-title">Class</h3>
+					<h3 class="page-title">Student Class</h3>
 					<div class="d-inline-block align-items-center">
 						<nav>
 							<ol class="breadcrumb">
@@ -31,7 +31,7 @@
 			 <div class="box">
 				<div class="box-header with-border d-flex justify-content-between">
 				  <h3 class="box-title">Student Class List</h3>
-				  <a href="{{ route('add.user') }}" class="btn btn-success" style="float: right;"><i class="ti-plus">Add Student Class</i></a>
+				  <a href="{{ route('add.student.class') }}" class="btn btn-success" style="float: right;"><i class="ti-plus">Add Student Class</i></a>
 				</div>
 
 
