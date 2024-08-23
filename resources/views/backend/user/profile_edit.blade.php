@@ -33,9 +33,9 @@
 			<div class="box-body">
 			  <div class="row">
 				<div class="col">
-					<form method="POST" action="{{ route('update.user') }}">
+					<form method="POST" action="{{ route('profile.store') }}" enctype="multipart/form-data">
 						@csrf
-						<input type="hidden" name="id" value="{{ $user->id }}">
+
 					  <div class="row">
 						<div class="col-12">
 						
@@ -107,10 +107,7 @@
 								<div class="form-group">
 									<h5>User Image<span class="text-danger">*</span></h5>
 									<div class="controls">
-										<input type="file" name="photo" id="photo" class="form-control" required="">
-										@error('photo')
-										<span class="text-danger">{{ $message }}</span>
-										@enderror
+										<input type="file" name="photo" id="photo" class="form-control" >
 										</div>
 								</div>
 
