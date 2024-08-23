@@ -50,6 +50,7 @@ Route::middleware('auth')->group(function () {
         Route::post('store/student/class', 'StoreStudentClass')->name('store.student.class');
         Route::get('edit/student/class/{id}', 'EditStudentClass')->name('edit.student.class');
         Route::post('update/student/class', 'UpdateStudentClass')->name('update.student.class');
+        Route::get('delete/student/class/{id}', 'DeleteStudentClass')->name('delete.student.class');
     });
 
 

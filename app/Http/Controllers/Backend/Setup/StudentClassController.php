@@ -63,6 +63,18 @@ class StudentClassController extends Controller
 
     }//End Methon
 
+    public function DeleteStudentClass($id){
+
+        StudentClass::find($id)->delete();
+        $notification = array(
+            'message' => 'Student Class Deleted successfully!',
+            'alert-type' => 'success'
+        );
+
+       return redirect()->back()->with($notification);
+
+    }//End Method
+
 
 
 
