@@ -41,6 +41,9 @@
             <li><a href="{{ route('add.user')}}"><i class="ti-more"></i>Add User</a></li>
           </ul>
         </li> 
+
+        
+
 		  
         <li class="treeview {{ Route::currentRouteName() === 'profile.view' || Route::currentRouteName() === 'password.view' ? 'active' : '' }}">
           <a href="#">
@@ -54,6 +57,19 @@
             <li><a href="{{ route('password.view')}}"><i class="ti-more"></i>Change Password</a></li>
           </ul>
         </li>
+
+        <li class="treeview {{ Route::currentRouteName() === 'user.view' ? 'active' : '' }}">
+          <a href="#">
+            <i data-feather="message-circle"></i>
+            <span>Setup Management</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('student.class')}}"><i class="ti-more"></i>Student Class</a></li>
+          </ul>
+        </li> 
 			  
 		 
         <li class="header nav-small-cap">User Interface</li>

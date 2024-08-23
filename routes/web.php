@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\UserProfileController;
+use App\Http\Controllers\Backend\Setup\StudentClassController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -40,6 +41,11 @@ Route::middleware('auth')->group(function () {
         //Password Changed Route
         Route::get('password/edit', 'PasswordView')->name('password.view');
         Route::post('password/update', 'PasswordUpdate')->name('update.password');
+    });
+
+    // Setup Management All Route
+    Route::controller(StudentClassController::class)->group(function () {
+        Route::get('student/class', 'StudentClass')->name('student.class');
     });
 
 
