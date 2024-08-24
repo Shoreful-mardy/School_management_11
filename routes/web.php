@@ -70,6 +70,9 @@ Route::middleware('auth')->group(function () {
         Route::get('student/group', 'StudentGroup')->name('student.group');
         Route::get('add/student/group', 'AddStudentGroup')->name('add.student.group');
         Route::post('store/student/group', 'StoreStudentGroup')->name('store.student.group');
+        Route::get('edit/student/group/{id}', 'EditStudentGroup')->name('edit.student.group');
+        Route::post('update/student/group', 'UpdateStudentGroup')->name('update.student.group');
+        Route::get('delete/student/group/{id}', 'DeleteStudentGroup')->name('delete.student.group');
     });
 
 
