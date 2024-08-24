@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\UserProfileController;
 use App\Http\Controllers\Backend\Setup\StudentClassController;
 use App\Http\Controllers\Backend\Setup\StudentYearController;
+use App\Http\Controllers\Backend\Setup\StudentGroupController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -62,6 +63,11 @@ Route::middleware('auth')->group(function () {
         Route::get('edit/student/year/{id}', 'EditStudentYear')->name('edit.student.year');
         Route::post('update/student/year', 'UpdateStudentYear')->name('update.student.year');
         Route::get('delete/student/year/{id}', 'DeleteStudentYear')->name('delete.student.year');
+    });
+
+     // Setup Management Student Group All Route
+    Route::controller(StudentGroupController::class)->group(function () {
+        Route::get('student/group', 'StudentGroup')->name('student.group');
     });
 
 

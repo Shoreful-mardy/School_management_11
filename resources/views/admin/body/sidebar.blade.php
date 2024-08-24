@@ -58,7 +58,7 @@
           </ul>
         </li>
 
-        <li class="treeview {{ Route::currentRouteName() === 'student.class' || Route::currentRouteName() === 'student.year' ? 'active' : '' }}">
+        <li class="treeview {{ Route::currentRouteName() === 'student.class' || Route::currentRouteName() === 'student.year' || Route::currentRouteName() === 'student.group' ? 'active' : '' }}">
           <a href="#">
             <i data-feather="message-circle"></i>
             <span>Setup Management</span>
@@ -69,6 +69,7 @@
           <ul class="treeview-menu">
             <li><a href="{{ route('student.class')}}"><i class="ti-more"></i>Student Class</a></li>
             <li><a href="{{ route('student.year')}}"><i class="ti-more"></i>Student Year</a></li>
+            <li><a href="{{ route('student.group')}}"><i class="ti-more"></i>Student Group</a></li>
           </ul>
         </li> 
 			  
