@@ -81,8 +81,9 @@ Route::middleware('auth')->group(function () {
         Route::get('student/shift', 'StudentShift')->name('student.shift');
         Route::get('add/student/shift', 'AddStudentShift')->name('add.student.shift');
         Route::post('store/student/shift', 'StoreStudentShift')->name('store.student.shift');
-
-
+        Route::get('edit/student/shift/{id}', 'EditStudentShift')->name('edit.student.shift');
+        Route::post('update/student/shift', 'UpdateStudentShift')->name('update.student.shift');
+        Route::get('delete/student/shift/{id}', 'DeleteStudentShift')->name('delete.student.shift');
     });
 
 

@@ -53,8 +53,8 @@
 								<td>{{ $key+1}}</td>
 								<td>{{ $item->name}}</td>
 								<td>
-									<a href="{{ route('edit.student.group',$item->id) }}" class="btn btn-info">Edit</a>
-									<a href="{{ route('delete.student.group',$item->id) }}" id="delete" class="btn btn-danger">Delete</a>
+									<a href="{{ route('edit.student.shift',$item->id) }}" class="btn btn-info">Edit</a>
+									<a href="{{ route('delete.student.shift',$item->id) }}" id="delete" class="btn btn-danger">Delete</a>
 								</td>
 							</tr>
 							@endforeach
