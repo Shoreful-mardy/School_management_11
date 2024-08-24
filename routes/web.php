@@ -92,7 +92,9 @@ Route::middleware('auth')->group(function () {
         Route::get('fee/category', 'FeeCategoryView')->name('fee.category');
         Route::get('add/student/fee', 'AddStudentFee')->name('add.student.fee');
         Route::post('store/fee/category', 'StoreFeeCategory')->name('store.fee.category');
-
+        Route::get('edit/fee/category/{id}', 'EditFeeCategory')->name('edit.fee.category');
+        Route::post('update/fee/category', 'UpdateFeeCategory')->name('update.fee.category');
+        Route::get('delete/fee/category/{id}', 'DeleteFeeCategory')->name('delete.fee.category');
     });
 
 
