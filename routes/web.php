@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\UserProfileController;
 use App\Http\Controllers\Backend\Setup\StudentClassController;
 use App\Http\Controllers\Backend\Setup\StudentYearController;
 use App\Http\Controllers\Backend\Setup\StudentGroupController;
+use App\Http\Controllers\Backend\Setup\StudentShiftController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -74,6 +75,16 @@ Route::middleware('auth')->group(function () {
         Route::post('update/student/group', 'UpdateStudentGroup')->name('update.student.group');
         Route::get('delete/student/group/{id}', 'DeleteStudentGroup')->name('delete.student.group');
     });
+
+     // Setup Management Student Shift All Route
+    Route::controller(StudentShiftController::class)->group(function () {
+        Route::get('student/shift', 'StudentShift')->name('student.shift');
+        Route::get('add/student/shift', 'AddStudentShift')->name('add.student.shift');
+        Route::post('store/student/shift', 'StoreStudentShift')->name('store.student.shift');
+
+
+    });
+
 
 
 });

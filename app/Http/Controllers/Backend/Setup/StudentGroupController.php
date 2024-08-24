@@ -20,7 +20,7 @@ class StudentGroupController extends Controller
     public function StoreStudentGroup(Request $request){
 
         $validatedData = $request->validate([
-            'name' => 'required|unique:student_years,name',
+            'name' => 'required|unique:student_groups,name',
         ]);
 
         StudentGroup::insert([
@@ -43,7 +43,7 @@ class StudentGroupController extends Controller
     public function UpdateStudentGroup(Request $request){
 
         $validatedData = $request->validate([
-            'name' => 'required|unique:student_years,name',
+            'name' => 'required|unique:student_groups,name',
         ]);
 
         $id = $request->id;
