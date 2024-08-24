@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\Setup\StudentClassController;
 use App\Http\Controllers\Backend\Setup\StudentYearController;
 use App\Http\Controllers\Backend\Setup\StudentGroupController;
 use App\Http\Controllers\Backend\Setup\StudentShiftController;
+use App\Http\Controllers\Backend\Setup\FeeCategoryController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -84,6 +85,14 @@ Route::middleware('auth')->group(function () {
         Route::get('edit/student/shift/{id}', 'EditStudentShift')->name('edit.student.shift');
         Route::post('update/student/shift', 'UpdateStudentShift')->name('update.student.shift');
         Route::get('delete/student/shift/{id}', 'DeleteStudentShift')->name('delete.student.shift');
+    });
+
+     // Setup Management Student Fee Category All Route
+    Route::controller(FeeCategoryController::class)->group(function () {
+        Route::get('fee/category', 'FeeCategoryView')->name('fee.category');
+        Route::get('add/student/fee', 'AddStudentFee')->name('add.student.fee');
+        Route::post('store/fee/category', 'StoreFeeCategory')->name('store.fee.category');
+
     });
 
 
