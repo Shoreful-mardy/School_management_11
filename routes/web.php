@@ -101,6 +101,7 @@ Route::middleware('auth')->group(function () {
      // Setup Management Student Fee Category Amount All Route
     Route::controller(FeeAmountController::class)->group(function () {
         Route::get('fee/category/amount', 'FeeCategoryAmountView')->name('fee.category.amount');
+        Route::get('add/fee/amount', 'AddFeeAmount')->name('add.fee.amount');
     });
 
 

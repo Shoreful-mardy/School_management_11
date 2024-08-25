@@ -31,7 +31,7 @@
 			 <div class="box">
 				<div class="box-header with-border d-flex justify-content-between">
 				  <h3 class="box-title">Student Fee Amount List</h3>
-				  <a href="{{ route('add.student.fee') }}" class="btn btn-success" style="float: right;"><i class="ti-plus">Add Fee Amount</i></a>
+				  <a href="{{ route('add.fee.amount') }}" class="btn btn-success" style="float: right;"><i class="ti-plus">Add Fee Amount</i></a>
 				</div>
 
 
