@@ -116,7 +116,9 @@ Route::middleware('auth')->group(function () {
         Route::get('exam/type', 'ExamType')->name('exam.type');
         Route::get('add/exam/type', 'AddExamType')->name('add.exam.type');
         Route::post('store/exam/type', 'StoreExamType')->name('store.exam.type');
-
+        Route::get('edit/exam/type/{id}', 'EditExamType')->name('edit.exam.type');
+        Route::post('update/exam/type', 'UpdateExamType')->name('update.exam.type');
+        Route::get('delete/exam/type/{id}', 'DeleteExamType')->name('delete.exam.type');
     });
 
 
