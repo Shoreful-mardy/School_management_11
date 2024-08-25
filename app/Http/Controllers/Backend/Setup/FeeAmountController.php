@@ -48,6 +48,44 @@ class FeeAmountController extends Controller
     }//End Method
 
 
+    public function EditFeeAmount($fee_category_id){
+
+        $editdata = FeeCategoryAmount::where('fee_category_id',$fee_category_id)->orderBy('class_id','asc')->get();
+        $fee_category = FeeCategory::all();
+        $student_class = StudentClass::all();
+
+        return view('Backend.setup.fee_amount.edit_fee_amount',compact('editdata','fee_category','student_class'));
+
+    }//End Method
+
+    public function UpdateFeeAmount(Request $request,$fee_category_id){
+        if ($request->class_id == Null) {
+            $notification = array(
+                'message' => 'Something Want Wrong',
+                'alert-type' => 'error'
+            );
+           return redirect()->back()->with($notification);
+        }else{
+            $countclass = count($request->class_id);
+            FeeCategoryAmount::where('fee_category_id',$fee_category_id)->delete();
+                for ($i=0; $i < $countclass; $i++) { 
+                   $fee_amount = new  FeeCategoryAmount();
+                   $fee_amount->fee_category_id = $request->fee_category_id;
+                   $fee_amount->class_id = $request->class_id[$i];
+                   $fee_amount->amount = $request->amount[$i];
+                   $fee_amount->save();
+                }//End For
+
+          $notification = array(
+                'message' => 'Student Fee Amount Updated successfully!',
+                'alert-type' => 'success'
+            );
+           return redirect()->route('fee.category.amount')->with($notification);  
+
+        }//end if
+    }//End Method
+
+
 
 
 
