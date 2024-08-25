@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\Setup\StudentGroupController;
 use App\Http\Controllers\Backend\Setup\StudentShiftController;
 use App\Http\Controllers\Backend\Setup\FeeCategoryController;
 use App\Http\Controllers\Backend\Setup\FeeAmountController;
+use App\Http\Controllers\Backend\Setup\ExamTypeController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -107,6 +108,14 @@ Route::middleware('auth')->group(function () {
         Route::post('update/fee/amount/{fee_category_id}', 'UpdateFeeAmount')->name('update.fee.amount');
         Route::get('details/fee/amount/{fee_category_id}', 'DetailsFeeAmount')->name('details.fee.amount');
         Route::get('delete/fee/amount/{fee_category_id}', 'DeleteFeeAmount')->name('delete.fee.amount');
+
+    });
+
+     // Setup Management Student Exam Type All Route
+    Route::controller(ExamTypeController::class)->group(function () {
+        Route::get('exam/type', 'ExamType')->name('exam.type');
+        Route::get('add/exam/type', 'AddExamType')->name('add.exam.type');
+        Route::post('store/exam/type', 'StoreExamType')->name('store.exam.type');
 
     });
 
