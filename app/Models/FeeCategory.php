@@ -9,4 +9,6 @@ class FeeCategory extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    
 }

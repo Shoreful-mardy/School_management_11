@@ -51,10 +51,10 @@
 							@foreach($data as $key => $item)
 							<tr>
 								<td>{{ $key+1}}</td>
-								<td>{{ $item->fee_category_id}}</td>
+								<td>{{ $item->feecategory->name}}</td>
 								<td>
-									<a href="{{ route('edit.fee.category',$item->id) }}" class="btn btn-info">Edit</a>
-									<a href="{{ route('delete.fee.category',$item->id) }}" id="delete" class="btn btn-danger">Delete</a>
+									<a href="" class="btn btn-info">Edit</a>
+									<a href="" id="delete" class="btn btn-danger">Delete</a>
 								</td>
 							</tr>
 							@endforeach

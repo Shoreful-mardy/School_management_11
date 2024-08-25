@@ -11,7 +11,7 @@ use App\Models\StudentClass;
 class FeeAmountController extends Controller
 {
     public function FeeCategoryAmountView(){
-        $data = FeeCategoryAmount::all();
+        $data = FeeCategoryAmount::select('fee_category_id')->groupBy('fee_category_id')->get();
         return view('Backend.setup.fee_amount.view_fee_amount',compact('data'));
     }//End Method
 
