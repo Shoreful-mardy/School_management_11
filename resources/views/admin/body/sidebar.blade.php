@@ -58,7 +58,7 @@
           </ul>
         </li>
 
-        <li class="treeview {{ Route::currentRouteName() === 'student.class' || Route::currentRouteName() === 'student.year' || Route::currentRouteName() === 'student.group' || Route::currentRouteName() === 'student.shift' || Route::currentRouteName() === 'fee.category' || Route::currentRouteName() === 'fee.category.amount' || Route::currentRouteName() === 'exam.type' ? 'active' : '' }}">
+        <li class="treeview {{ Route::currentRouteName() === 'student.class' || Route::currentRouteName() === 'student.year' || Route::currentRouteName() === 'student.group' || Route::currentRouteName() === 'student.shift' || Route::currentRouteName() === 'fee.category' || Route::currentRouteName() === 'fee.category.amount' || Route::currentRouteName() === 'exam.type' || Route::currentRouteName() === 'subject' ? 'active' : '' }}">
           <a href="#">
             <i data-feather="message-circle"></i>
             <span>Setup Management</span>
@@ -74,6 +74,7 @@
             <li><a href="{{ route('fee.category')}}"><i class="ti-more"></i>Student Fee Category</a></li>
             <li><a href="{{ route('fee.category.amount')}}"><i class="ti-more"></i>Fee Category Amount</a></li>
             <li><a href="{{ route('exam.type')}}"><i class="ti-more"></i>Exam Type</a></li>
+            <li><a href="{{ route('subject')}}"><i class="ti-more"></i>Subject</a></li>
           </ul>
         </li> 
 			  

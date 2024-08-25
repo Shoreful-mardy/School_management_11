@@ -12,6 +12,7 @@ use App\Http\Controllers\Backend\Setup\StudentShiftController;
 use App\Http\Controllers\Backend\Setup\FeeCategoryController;
 use App\Http\Controllers\Backend\Setup\FeeAmountController;
 use App\Http\Controllers\Backend\Setup\ExamTypeController;
+use App\Http\Controllers\Backend\Setup\SubjectController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -119,6 +120,16 @@ Route::middleware('auth')->group(function () {
         Route::get('edit/exam/type/{id}', 'EditExamType')->name('edit.exam.type');
         Route::post('update/exam/type', 'UpdateExamType')->name('update.exam.type');
         Route::get('delete/exam/type/{id}', 'DeleteExamType')->name('delete.exam.type');
+    });
+
+    // Setup Management Student Exam Type All Route
+    Route::controller(SubjectController::class)->group(function () {
+        Route::get('/subject', 'ExamType')->name('subject');
+        Route::get('add/subject', 'AddSubject')->name('add.subject');
+        Route::post('store/subject', 'StoreSubject')->name('store.subject');
+       // Route::get('edit/exam/type/{id}', 'EditExamType')->name('edit.exam.type');
+       // Route::post('update/exam/type', 'UpdateExamType')->name('update.exam.type');
+       // Route::get('delete/exam/type/{id}', 'DeleteExamType')->name('delete.exam.type');
     });
 
 
