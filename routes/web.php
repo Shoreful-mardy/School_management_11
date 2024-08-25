@@ -127,9 +127,9 @@ Route::middleware('auth')->group(function () {
         Route::get('/subject', 'ExamType')->name('subject');
         Route::get('add/subject', 'AddSubject')->name('add.subject');
         Route::post('store/subject', 'StoreSubject')->name('store.subject');
-       // Route::get('edit/exam/type/{id}', 'EditExamType')->name('edit.exam.type');
-       // Route::post('update/exam/type', 'UpdateExamType')->name('update.exam.type');
-       // Route::get('delete/exam/type/{id}', 'DeleteExamType')->name('delete.exam.type');
+        Route::get('edit/esubject/{id}', 'EditSubject')->name('edit.subject');
+        Route::post('update/subject', 'UpdateSubject')->name('update.subject');
+        Route::get('delete/subject/{id}', 'DeleteSubject')->name('delete.subject');
     });
 
 

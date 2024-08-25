@@ -31,6 +31,38 @@ class SubjectController extends Controller
        return redirect()->route('subject')->with($notification);
     }//End Method
 
+    public function EditSubject($id){
+
+       $data = Subject::find($id);
+       return view('Backend.setup.subject.edit_subject',compact('data'));
+
+    }//End Method
+    public function UpdateSubject(Request $request){
+        $validatedData = $request->validate([
+            'name' => 'required|unique:exam_types,name',
+        ]);
+        $id = $request->id;
+        Subject::findOrFail($id)->update([
+            'name' => $request->name,
+        ]);
+        $notification = array(
+            'message' => 'Subject Updated successfully!',
+            'alert-type' => 'success'
+        );
+       return redirect()->route('subject')->with($notification);
+
+    }//End Methon
+    public function DeleteSubject($id){
+
+        Subject::find($id)->delete();
+        $notification = array(
+            'message' => 'Subject Deleted successfully!',
+            'alert-type' => 'success'
+        );
+
+       return redirect()->back()->with($notification);
+    }//End Method
+
 
 
 
