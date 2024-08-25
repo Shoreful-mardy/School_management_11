@@ -102,6 +102,8 @@ Route::middleware('auth')->group(function () {
     Route::controller(FeeAmountController::class)->group(function () {
         Route::get('fee/category/amount', 'FeeCategoryAmountView')->name('fee.category.amount');
         Route::get('add/fee/amount', 'AddFeeAmount')->name('add.fee.amount');
+        Route::post('store/fee/amount', 'StoreFeeAmount')->name('store.fee.amount');
+
     });
 
 

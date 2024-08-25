@@ -21,5 +21,48 @@ class FeeAmountController extends Controller
         return view('Backend.setup.fee_amount.add_fee_amount',compact('fee_category','student_class'));
     }//End Method
 
+    public function StoreFeeAmount(Request $request){
+
+        $countclass = count($request->class_id);
+        if ($countclass != Null) {
+            for ($i=0; $i < $countclass; $i++) { 
+                FeeCategoryAmount::insert([
+                    'fee_category_id' => $request->fee_category_id,
+                    'class_id' => $request->class_id[$i],
+                    'amount' => $request->amount[$i],
+                ]);
+            }//End For
+            $notification = array(
+                'message' => 'Student Fee Amount successfully!',
+                'alert-type' => 'success'
+            );
+           return redirect()->route('fee.category.amount')->with($notification);
+        }//End if
+
+        $notification = array(
+            'message' => 'Something Want Wrong',
+            'alert-type' => 'error'
+        );
+       return redirect()->back()->with($notification);
+
+    }//End Method
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
