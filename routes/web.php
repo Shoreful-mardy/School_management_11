@@ -105,6 +105,9 @@ Route::middleware('auth')->group(function () {
         Route::post('store/fee/amount', 'StoreFeeAmount')->name('store.fee.amount');
         Route::get('edit/fee/amount/{fee_category_id}', 'EditFeeAmount')->name('edit.fee.amount');
         Route::post('update/fee/amount/{fee_category_id}', 'UpdateFeeAmount')->name('update.fee.amount');
+        Route::get('details/fee/amount/{fee_category_id}', 'DetailsFeeAmount')->name('details.fee.amount');
+        Route::get('delete/fee/amount/{fee_category_id}', 'DeleteFeeAmount')->name('delete.fee.amount');
+
     });
 
 

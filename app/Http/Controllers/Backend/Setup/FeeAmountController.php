@@ -85,6 +85,22 @@ class FeeAmountController extends Controller
         }//end if
     }//End Method
 
+    public function DetailsFeeAmount($fee_category_id){
+         $detailsData = FeeCategoryAmount::where('fee_category_id',$fee_category_id)->orderBy('class_id','asc')->get();
+         return view('Backend.setup.fee_amount.details_fee_amount',compact('detailsData'));
+    }//End Method
+
+
+    public function DeleteFeeAmount($fee_category_id){
+        FeeCategoryAmount::where('fee_category_id',$fee_category_id)->delete(); 
+
+        $notification = array(
+                'message' => 'Student Fee Amount Delete successfully!',
+                'alert-type' => 'success'
+            );
+           return redirect()->back()->with($notification); 
+    }//End Method
+
 
 
 

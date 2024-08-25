@@ -6,13 +6,13 @@
 		<div class="content-header">
 			<div class="d-flex align-items-center">
 				<div class="mr-auto">
-					<h3 class="page-title">Student Fee Amount</h3>
+					<h3 class="page-title">Fee Amount</h3>
 					<div class="d-inline-block align-items-center">
 						<nav>
 							<ol class="breadcrumb">
 								<li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home-outline"></i></a></li>
 								<li class="breadcrumb-item" aria-current="page">Fee</li>
-								<li class="breadcrumb-item active" aria-current="page">Student Fee Amount</li>
+								<li class="breadcrumb-item active" aria-current="page">Fee Amount Details</li>
 							</ol>
 						</nav>
 					</div>
@@ -30,7 +30,7 @@
 
 			 <div class="box">
 				<div class="box-header with-border d-flex justify-content-between">
-				  <h3 class="box-title">Student Fee Amount List</h3>
+				  <h3 class="box-title">Student Fee Amount Details</h3>
 				  <a href="{{ route('add.fee.amount') }}" class="btn btn-success" style="float: right;"><i class="ti-plus">Add Fee Amount</i></a>
 				</div>
 
@@ -38,33 +38,30 @@
 
 				<!-- /.box-header -->
 				<div class="box-body">
+					<h4><strong>Fee Category : </strong><span class="text-danger">{{ $detailsData['0']['feecategory']['name'] }}</span></h4>
 					<div class="table-responsive">
-					  <table id="example1" class="table table-bordered table-striped">
+					  <table class="table table-bordered table-striped">
 						<thead>
 							<tr>
 								<th width="5%">Sl</th>
-								<th>Fee Category</th>
-								<th width="30%">Action</th>
+								<th>Class Name</th>
+								<th width="25%">Amount</th>
 							</tr>
 						</thead>
 						<tbody>
-							@foreach($data as $key => $item)
+							@foreach($detailsData as $key => $item)
 							<tr>
 								<td>{{ $key+1}}</td>
-								<td>{{ $item->feecategory->name}}</td>
-								<td>
-									<a href="{{ route('edit.fee.amount',$item->fee_category_id) }}" class="btn btn-info">Edit</a>
-									<a href="{{ route('details.fee.amount',$item->fee_category_id) }}" class="btn btn-warning">Details</a>
-									<a href="{{ route('delete.fee.amount',$item->fee_category_id) }}" id="delete" class="btn btn-danger">Delete</a>
-								</td>
+								<td>{{ $item->class->name}}</td>
+								<td>{{ $item->amount}}</td>
 							</tr>
 							@endforeach
 						</tbody>
 						<tfoot>
 							<tr>
 								<th width="5%">Sl</th>
-								<th>Name</th>
-								<th width="30%">Action</th>
+								<th>Class Name</th>
+								<th width="25%">Amount</th>
 							</tr>
 						</tfoot>
 					  </table>
