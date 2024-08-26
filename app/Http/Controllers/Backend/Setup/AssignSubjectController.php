@@ -87,6 +87,10 @@ class AssignSubjectController extends Controller
 
         }//end if
     }//End Method
+    public function DetailsAssignSubject($class_id){
+         $detailsData = AssignSubject::where('class_id',$class_id)->orderBy('subject_id','asc')->get();
+         return view('Backend.setup.assign_subject.details_assign_subject',compact('detailsData'));
+    }//End Method
 
 
 
