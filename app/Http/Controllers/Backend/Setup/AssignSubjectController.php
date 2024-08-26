@@ -16,6 +16,12 @@ class AssignSubjectController extends Controller
         return view('Backend.setup.assign_subject.view_assign_subject',compact('data'));
     }//End Method
 
+    public function AddAssignSubject(){
+        $subject = Subject::all();
+        $student_class = StudentClass::all();
+        return view('Backend.setup.assign_subject.add_assign_subject',compact('subject','student_class'));
+    }//End Method
+
 
 
 

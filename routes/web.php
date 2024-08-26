@@ -136,7 +136,7 @@ Route::middleware('auth')->group(function () {
      // Setup Management Assign Subject All Route
     Route::controller(AssignSubjectController::class)->group(function () {
         Route::get('assign/subject/view', 'AssignSubjectView')->name('assign.subject.view');
-        // Route::get('add/fee/amount', 'AddFeeAmount')->name('add.fee.amount');
+        Route::get('add/assgin/subject', 'AddAssignSubject')->name('add.assgin.subject');
         // Route::post('store/fee/amount', 'StoreFeeAmount')->name('store.fee.amount');
         // Route::get('edit/fee/amount/{fee_category_id}', 'EditFeeAmount')->name('edit.fee.amount');
         // Route::post('update/fee/amount/{fee_category_id}', 'UpdateFeeAmount')->name('update.fee.amount');
