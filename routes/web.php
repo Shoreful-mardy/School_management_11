@@ -14,6 +14,7 @@ use App\Http\Controllers\Backend\Setup\FeeAmountController;
 use App\Http\Controllers\Backend\Setup\ExamTypeController;
 use App\Http\Controllers\Backend\Setup\SubjectController;
 use App\Http\Controllers\Backend\Setup\AssignSubjectController;
+use App\Http\Controllers\Backend\Setup\DesignationController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -141,7 +142,16 @@ Route::middleware('auth')->group(function () {
         Route::get('edit/assgin/subject/{class_id}', 'EditAssignSubject')->name('edit.assgin.subject');
         Route::post('update/assgin/subject/{class_id}', 'UpdateAssignSubject')->name('update.assign.subject');
         Route::get('details/assgin/subject/{class_id}', 'DetailsAssignSubject')->name('details.assgin.subject');
+    });
 
+     // Setup Management Designation All Route
+    Route::controller(DesignationController::class)->group(function () {
+        Route::get('designation/view', 'DesignationView')->name('designation.view');
+        Route::get('add/designation', 'AddDesignation')->name('add.designation');
+        Route::post('store/designation', 'StoreDesignation')->name('store.designation');
+        // Route::get('edit/exam/type/{id}', 'EditExamType')->name('edit.exam.type');
+        // Route::post('update/exam/type', 'UpdateExamType')->name('update.exam.type');
+        // Route::get('delete/exam/type/{id}', 'DeleteExamType')->name('delete.exam.type');
     });
 
 

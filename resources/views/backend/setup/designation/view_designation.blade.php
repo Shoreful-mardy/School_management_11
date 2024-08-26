@@ -2,6 +2,7 @@
  @section('admin')
  <div class="content-wrapper">
 	  <div class="container-full">
+		<!-- Content Header (Page header) -->
 
 		<!-- Main content -->
 		<section class="content">
@@ -13,8 +14,8 @@
 
 			 <div class="box">
 				<div class="box-header with-border d-flex justify-content-between">
-				  <h3 class="box-title">Assigned Subject List</h3>
-				  <a href="{{ route('add.assgin.subject') }}" class="btn btn-success" style="float: right;"><i class="ti-plus">Add Assign Subject</i></a>
+				  <h3 class="box-title">Designation List</h3>
+				  <a href="{{ route('add.designation') }}" class="btn btn-success" style="float: right;"><i class="ti-plus">Add Designation</i></a>
 				</div>
 
 
@@ -26,18 +27,18 @@
 						<thead>
 							<tr>
 								<th width="5%">Sl</th>
-								<th>Class Name</th>
-								<th width="30%">Action</th>
+								<th>Designation Name </th>
+								<th width="25%">Action</th>
 							</tr>
 						</thead>
 						<tbody>
 							@foreach($data as $key => $item)
 							<tr>
 								<td>{{ $key+1}}</td>
-								<td>{{ $item->class->name}}</td>
+								<td>{{ $item->name}}</td>
 								<td>
-									<a href="{{ route('edit.assgin.subject',$item->class_id) }}" class="btn btn-info">Edit</a>
-									<a href="{{ route('details.assgin.subject',$item->class_id) }}" class="btn btn-warning">Details</a>
+									<a href="{{ route('edit.exam.type',$item->id) }}" class="btn btn-info">Edit</a>
+									<a href="{{ route('delete.exam.type',$item->id) }}" id="delete" class="btn btn-danger">Delete</a>
 								</td>
 							</tr>
 							@endforeach
@@ -45,8 +46,8 @@
 						<tfoot>
 							<tr>
 								<th width="5%">Sl</th>
-								<th>Class Name</th>
-								<th width="30%">Action</th>
+								<th>Designation Name </th>
+								<th width="25%">Action</th>
 							</tr>
 						</tfoot>
 					  </table>

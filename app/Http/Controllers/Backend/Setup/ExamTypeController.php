@@ -8,6 +8,7 @@ use App\Models\ExamType;
 
 class ExamTypeController extends Controller
 {
+    
     public function ExamType(){
         $data = ExamType::all();
         return view('Backend.setup.exam_type.view_examtype',compact('data'));

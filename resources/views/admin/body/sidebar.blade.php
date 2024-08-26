@@ -58,7 +58,7 @@
           </ul>
         </li>
 
-        <li class="treeview {{ Route::currentRouteName() === 'student.class' || Route::currentRouteName() === 'student.year' || Route::currentRouteName() === 'student.group' || Route::currentRouteName() === 'student.shift' || Route::currentRouteName() === 'fee.category' || Route::currentRouteName() === 'fee.category.amount' || Route::currentRouteName() === 'exam.type' || Route::currentRouteName() === 'subject' ? 'active' : '' }}">
+        <li class="treeview {{ Route::currentRouteName() === 'student.class' || Route::currentRouteName() === 'student.year' || Route::currentRouteName() === 'student.group' || Route::currentRouteName() === 'student.shift' || Route::currentRouteName() === 'fee.category' || Route::currentRouteName() === 'fee.category.amount' || Route::currentRouteName() === 'exam.type' || Route::currentRouteName() === 'subject' || Route::currentRouteName() === 'assign.subject.view' || Route::currentRouteName() === 'designation.view' ? 'active' : '' }}">
           <a href="#">
             <i data-feather="message-circle"></i>
             <span>Setup Management</span>
@@ -76,6 +76,7 @@
             <li><a href="{{ route('exam.type')}}"><i class="ti-more"></i>Exam Type</a></li>
             <li><a href="{{ route('subject')}}"><i class="ti-more"></i>Subject</a></li>
             <li><a href="{{ route('assign.subject.view')}}"><i class="ti-more"></i>Assign Subject</a></li>
+            <li><a href="{{ route('designation.view')}}"><i class="ti-more"></i>Designation</a></li>
           </ul>
         </li> 
 			  
