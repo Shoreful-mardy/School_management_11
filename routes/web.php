@@ -149,8 +149,8 @@ Route::middleware('auth')->group(function () {
         Route::get('designation/view', 'DesignationView')->name('designation.view');
         Route::get('add/designation', 'AddDesignation')->name('add.designation');
         Route::post('store/designation', 'StoreDesignation')->name('store.designation');
-        // Route::get('edit/exam/type/{id}', 'EditExamType')->name('edit.exam.type');
-        // Route::post('update/exam/type', 'UpdateExamType')->name('update.exam.type');
+        Route::get('edit/designation/{id}', 'EditDesignation')->name('edit.designation');
+        Route::post('update/designaion', 'UpdateDesignaion')->name('update.designaion');
         // Route::get('delete/exam/type/{id}', 'DeleteExamType')->name('delete.exam.type');
     });
 

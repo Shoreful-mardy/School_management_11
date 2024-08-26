@@ -37,7 +37,7 @@
 								<td>{{ $key+1}}</td>
 								<td>{{ $item->name}}</td>
 								<td>
-									<a href="{{ route('edit.exam.type',$item->id) }}" class="btn btn-info">Edit</a>
+									<a href="{{ route('edit.designation',$item->id) }}" class="btn btn-info">Edit</a>
 									<a href="{{ route('delete.exam.type',$item->id) }}" id="delete" class="btn btn-danger">Delete</a>
 								</td>
 							</tr>

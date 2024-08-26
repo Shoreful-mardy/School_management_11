@@ -28,6 +28,24 @@ class DesignationController extends Controller
         );
        return redirect()->route('designation.view')->with($notification);
     }//End Method
+    public function EditDesignation($id){
+       $data = Designation::find($id);
+       return view('Backend.setup.designation.edit_designation',compact('data'));
+    }//End Method
+    public function UpdateDesignaion(Request $request){
+        $validatedData = $request->validate([
+            'name' => 'required|unique:designations,name',
+        ]);
+        $id = $request->id;
+        Designation::findOrFail($id)->update([
+            'name' => $request->name,
+        ]);
+        $notification = array(
+            'message' => 'Designation Updated successfully!',
+            'alert-type' => 'success'
+        );
+       return redirect()->route('designation.view')->with($notification);
+    }//End Methon
 
 
 
