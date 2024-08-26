@@ -34,7 +34,7 @@
 							@foreach($data as $key => $item)
 							<tr>
 								<td>{{ $key+1}}</td>
-								<td>{{ $item->class_id}}</td>
+								<td>{{ $item->class->name}}</td>
 								<td>
 									<a href="" class="btn btn-info">Edit</a>
 									<a href="" class="btn btn-warning">Details</a>

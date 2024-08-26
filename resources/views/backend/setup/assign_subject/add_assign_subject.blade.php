@@ -16,7 +16,7 @@
 			<div class="box-body">
 			  <div class="row">
 				<div class="col">
-					<form method="POST" action="{{ route('store.fee.amount') }}">
+					<form method="POST" action="{{ route('store.assign.subject') }}">
 						@csrf
 					  <div class="row">
 						<div class="col-12">
@@ -24,7 +24,7 @@
 								<div class="form-group">
 									<h5>Class Name<span class="text-danger">*</span></h5>
 									<div class="controls">
-										<select name="class_id[]" id="select" required="" class="form-control">
+										<select name="class_id" id="select" required="" class="form-control">
 											<option value="" selected="" disabled="">Select Class</option>
 											@foreach($student_class as $item)
 											<option value="{{$item->id}}">{{ $item->name}}</option>
