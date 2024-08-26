@@ -138,8 +138,8 @@ Route::middleware('auth')->group(function () {
         Route::get('assign/subject/view', 'AssignSubjectView')->name('assign.subject.view');
         Route::get('add/assgin/subject', 'AddAssignSubject')->name('add.assgin.subject');
         Route::post('store/assign/subject', 'StoreAssignSubject')->name('store.assign.subject');
-        // Route::get('edit/fee/amount/{fee_category_id}', 'EditFeeAmount')->name('edit.fee.amount');
-        // Route::post('update/fee/amount/{fee_category_id}', 'UpdateFeeAmount')->name('update.fee.amount');
+        Route::get('edit/assgin/subject/{class_id}', 'EditAssignSubject')->name('edit.assgin.subject');
+        Route::post('update/assign/subject/{class_id}', 'UpdateAssignSubject')->name('update.assign.subject');
         // Route::get('details/fee/amount/{fee_category_id}', 'DetailsFeeAmount')->name('details.fee.amount');
         // Route::get('delete/fee/amount/{fee_category_id}', 'DeleteFeeAmount')->name('delete.fee.amount');
 

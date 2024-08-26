@@ -36,7 +36,7 @@
 								<td>{{ $key+1}}</td>
 								<td>{{ $item->class->name}}</td>
 								<td>
-									<a href="" class="btn btn-info">Edit</a>
+									<a href="{{ route('edit.assgin.subject',$item->class_id) }}" class="btn btn-info">Edit</a>
 									<a href="" class="btn btn-warning">Details</a>
 									<a href="" id="delete" class="btn btn-danger">Delete</a>
 								</td>
