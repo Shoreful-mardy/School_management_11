@@ -75,6 +75,7 @@
             <li><a href="{{ route('fee.category.amount')}}"><i class="ti-more"></i>Fee Category Amount</a></li>
             <li><a href="{{ route('exam.type')}}"><i class="ti-more"></i>Exam Type</a></li>
             <li><a href="{{ route('subject')}}"><i class="ti-more"></i>Subject</a></li>
+            <li><a href="{{ route('assign.subject.view')}}"><i class="ti-more"></i>Assign Subject</a></li>
           </ul>
         </li> 
 			  

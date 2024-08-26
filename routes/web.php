@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\Setup\FeeCategoryController;
 use App\Http\Controllers\Backend\Setup\FeeAmountController;
 use App\Http\Controllers\Backend\Setup\ExamTypeController;
 use App\Http\Controllers\Backend\Setup\SubjectController;
+use App\Http\Controllers\Backend\Setup\AssignSubjectController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -130,6 +131,18 @@ Route::middleware('auth')->group(function () {
         Route::get('edit/esubject/{id}', 'EditSubject')->name('edit.subject');
         Route::post('update/subject', 'UpdateSubject')->name('update.subject');
         Route::get('delete/subject/{id}', 'DeleteSubject')->name('delete.subject');
+    });
+
+     // Setup Management Assign Subject All Route
+    Route::controller(AssignSubjectController::class)->group(function () {
+        Route::get('assign/subject/view', 'AssignSubjectView')->name('assign.subject.view');
+        // Route::get('add/fee/amount', 'AddFeeAmount')->name('add.fee.amount');
+        // Route::post('store/fee/amount', 'StoreFeeAmount')->name('store.fee.amount');
+        // Route::get('edit/fee/amount/{fee_category_id}', 'EditFeeAmount')->name('edit.fee.amount');
+        // Route::post('update/fee/amount/{fee_category_id}', 'UpdateFeeAmount')->name('update.fee.amount');
+        // Route::get('details/fee/amount/{fee_category_id}', 'DetailsFeeAmount')->name('details.fee.amount');
+        // Route::get('delete/fee/amount/{fee_category_id}', 'DeleteFeeAmount')->name('delete.fee.amount');
+
     });
 
 

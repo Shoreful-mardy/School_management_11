@@ -21,6 +21,7 @@ class FeeAmountController extends Controller
         return view('Backend.setup.fee_amount.add_fee_amount',compact('fee_category','student_class'));
     }//End Method
 
+
     public function StoreFeeAmount(Request $request){
 
         $countclass = count($request->class_id);
