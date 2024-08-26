@@ -46,6 +46,14 @@ class DesignationController extends Controller
         );
        return redirect()->route('designation.view')->with($notification);
     }//End Methon
+    public function DeleteDesignation($id){
+        Designation::find($id)->delete();
+        $notification = array(
+            'message' => 'Designation Deleted successfully!',
+            'alert-type' => 'success'
+        );
+       return redirect()->back()->with($notification);
+    }//End Method
 
 
 

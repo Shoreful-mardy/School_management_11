@@ -151,7 +151,7 @@ Route::middleware('auth')->group(function () {
         Route::post('store/designation', 'StoreDesignation')->name('store.designation');
         Route::get('edit/designation/{id}', 'EditDesignation')->name('edit.designation');
         Route::post('update/designaion', 'UpdateDesignaion')->name('update.designaion');
-        // Route::get('delete/exam/type/{id}', 'DeleteExamType')->name('delete.exam.type');
+        Route::get('delete/designation/{id}', 'DeleteDesignation')->name('delete.designation');
     });
 
 
