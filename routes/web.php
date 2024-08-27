@@ -15,6 +15,7 @@ use App\Http\Controllers\Backend\Setup\ExamTypeController;
 use App\Http\Controllers\Backend\Setup\SubjectController;
 use App\Http\Controllers\Backend\Setup\AssignSubjectController;
 use App\Http\Controllers\Backend\Setup\DesignationController;
+use App\Http\Controllers\Backend\Student\StudentRegisterController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -134,7 +135,7 @@ Route::middleware('auth')->group(function () {
         Route::get('delete/subject/{id}', 'DeleteSubject')->name('delete.subject');
     });
 
-     // Setup Management Assign Subject All Route
+    // Setup Management Assign Subject All Route
     Route::controller(AssignSubjectController::class)->group(function () {
         Route::get('assign/subject/view', 'AssignSubjectView')->name('assign.subject.view');
         Route::get('add/assgin/subject', 'AddAssignSubject')->name('add.assgin.subject');
@@ -144,7 +145,7 @@ Route::middleware('auth')->group(function () {
         Route::get('details/assgin/subject/{class_id}', 'DetailsAssignSubject')->name('details.assgin.subject');
     });
 
-     // Setup Management Designation All Route
+    // Setup Management Designation All Route
     Route::controller(DesignationController::class)->group(function () {
         Route::get('designation/view', 'DesignationView')->name('designation.view');
         Route::get('add/designation', 'AddDesignation')->name('add.designation');
@@ -152,6 +153,11 @@ Route::middleware('auth')->group(function () {
         Route::get('edit/designation/{id}', 'EditDesignation')->name('edit.designation');
         Route::post('update/designaion', 'UpdateDesignaion')->name('update.designaion');
         Route::get('delete/designation/{id}', 'DeleteDesignation')->name('delete.designation');
+    });
+
+    // Student Management Designation All Route
+    Route::controller(StudentRegisterController::class)->group(function () {
+        Route::get('student/registration/view', 'StudentRegisterView')->name('student.registration.view');
     });
 
 

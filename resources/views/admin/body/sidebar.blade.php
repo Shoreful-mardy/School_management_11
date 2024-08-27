@@ -79,6 +79,18 @@
             <li><a href="{{ route('designation.view')}}"><i class="ti-more"></i>Designation</a></li>
           </ul>
         </li> 
+         <li class="treeview {{Route::currentRouteName() === 'student.registration.view' ? 'active' : '' }}">
+          <a href="#">
+            <i data-feather="message-circle"></i>
+            <span>Student Management</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('student.registration.view')}}"><i class="ti-more"></i>Student Registration</a></li>
+          </ul>
+        </li>
 			  
 		 
         <li class="header nav-small-cap">User Interface</li>
