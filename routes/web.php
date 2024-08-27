@@ -155,9 +155,10 @@ Route::middleware('auth')->group(function () {
         Route::get('delete/designation/{id}', 'DeleteDesignation')->name('delete.designation');
     });
 
-    // Student Management Designation All Route
+    // Student Registation All Route
     Route::controller(StudentRegisterController::class)->group(function () {
         Route::get('student/registration/view', 'StudentRegisterView')->name('student.registration.view');
+        Route::get('student/registration/add', 'StudentRegisterAdd')->name('student.registration.add');
     });
 
 
