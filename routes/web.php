@@ -159,6 +159,7 @@ Route::middleware('auth')->group(function () {
     Route::controller(StudentRegisterController::class)->group(function () {
         Route::get('student/registration/view', 'StudentRegisterView')->name('student.registration.view');
         Route::get('student/registration/add', 'StudentRegisterAdd')->name('student.registration.add');
+        Route::post('store/student/registration', 'StoreStudentRegister')->name('store.student.registration');
     });
 
 
