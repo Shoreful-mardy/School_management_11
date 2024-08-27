@@ -51,6 +51,7 @@
 								<th>Role</th>
 								<th>Name</th>
 								<th>Email</th>
+								<th>Code</th>
 								<th width="25%">Action</th>
 							</tr>
 						</thead>
@@ -58,9 +59,10 @@
 							@foreach($user as $key => $item)
 							<tr>
 								<td>{{ $key+1}}</td>
-								<td>{{ $item->user_type}}</td>
+								<td>{{ $item->role}}</td>
 								<td>{{ $item->name}}</td>
 								<td>{{ $item->email}}</td>
+								<td>{{ $item->code}}</td>
 								<td>
 									<a href="{{ route('edit.user',$item->id) }}" class="btn btn-info">Edit</a>
 									<a href="{{ route('delete.user',$item->id) }}" id="delete" class="btn btn-danger">Delete</a>
@@ -74,6 +76,7 @@
 								<th>Role</th>
 								<th>Name</th>
 								<th>Email</th>
+								<th>Code</th>
 								<th>Action</th>
 							</tr>
 						</tfoot>

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     public function ViewUser(){
-        $user = User::all();
+        $user = User::where('user_type','Admin')->get();
         return view('backend.user.all_user',compact('user'));
     }//End Method
 
@@ -24,14 +24,16 @@ class UserController extends Controller
        $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users',
-            'password' => 'required', 
         ]);
+       $code = rand(0000,9999);
 
        User::insert([
-        'user_type' => $request->user_type,
+        'user_type' => 'Admin',
+        'role' => $request->role,
         'name' => $request->name,
         'email' => $request->email,
-        'password' => Hash::make($request->password),
+        'password' => Hash::make($code),
+        'code' => $code,
        ]);
        $notification = array(
             'message' => 'User created successfully!',
@@ -54,7 +56,7 @@ class UserController extends Controller
             'email' => 'required|email',
         ]);
         $user = User::find($request->id);
-        $user->user_type = $request->user_type;
+        $user->role = $request->role;
         $user->name = $request->name;
         $user->email = $request->email;
         $user->save();
