@@ -17,8 +17,10 @@ use DB;
 class StudentRegisterController extends Controller
 {
     public function StudentRegisterView(){
+        $student_year = StudentYear::all();
+        $student_class = StudentClass::all();
         $data = AssignStudent::all();
-        return view('backend.student.student_reg.student_view',compact('data'));
+        return view('backend.student.student_reg.student_view',compact('data','student_year','student_class'));
     }//End Method
 
     public function StudentRegisterAdd(){
