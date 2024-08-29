@@ -7,6 +7,7 @@
 		<!-- Main content -->
 		<section class="content">
 		  <div class="row">
+		  	<div class="col-12">
 		  	<div class="box bb-3 border-warning">
 				  <div class="box-header">
 					<h4 class="box-title">Student <strong>Search</strong></h4>
@@ -48,6 +49,7 @@
 					</form>
 				  </div>
 				</div>
+			</div><!-- End col-12 -->
 			  
  
 

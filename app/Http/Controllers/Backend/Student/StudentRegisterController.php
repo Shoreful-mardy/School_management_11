@@ -19,8 +19,10 @@ class StudentRegisterController extends Controller
     public function StudentRegisterView(){
         $student_year = StudentYear::all();
         $student_class = StudentClass::all();
-        $data = AssignStudent::all();
-        return view('backend.student.student_reg.student_view',compact('data','student_year','student_class'));
+        $year_id = StudentYear::orderBy('id','desc')->first()->id;
+        $class_id = StudentClass::orderBy('id','desc')->first()->id;
+        $data = AssignStudent::where('year_id',$year_id)->where('class_id',$class_id)->get();
+        return view('backend.student.student_reg.student_view',compact('data','student_year','student_class','year_id','class_id'));
     }//End Method
 
     public function StudentRegisterAdd(){
