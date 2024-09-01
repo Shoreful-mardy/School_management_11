@@ -161,6 +161,7 @@ Route::middleware('auth')->group(function () {
         Route::get('student/registration/add', 'StudentRegisterAdd')->name('student.registration.add');
         Route::post('store/student/registration', 'StoreStudentRegister')->name('store.student.registration');
         Route::get('student/year/class/wise', 'StudentClassYearWise')->name('student.year.class.wise');
+        Route::get('student/registration/edit/{studetn_id}', 'StudentRegEdit')->name('student.registration.edit');
     });
 
 
