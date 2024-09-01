@@ -157,7 +157,7 @@ class StudentRegisterController extends Controller
         }
         $user->save();
 
-        $assign_student =AssignStudent::where('id',$request->id)->where('studetn_id',$studetn_id)->first();
+        $assign_student = AssignStudent::where('id',$request->id)->where('studetn_id',$studetn_id)->first();
         $assign_student->class_id = $request->class_id;
         $assign_student->year_id = $request->year_id;
         $assign_student->group_id = $request->group_id;
@@ -174,6 +174,42 @@ class StudentRegisterController extends Controller
     );
    return redirect()->route('student.registration.view')->with($notification);
     }//End Method
+    public function StudentRegPromote($id){
+
+        $student_year = StudentYear::all();
+        $student_class = StudentClass::all();
+        $student_group = StudentGroup::all();
+        $student_shift = StudentShift::all();
+        $data = AssignStudent::with(['student','discount'])->where('id',$id)->first();
+        return view('backend.student.student_reg.student_promotion',compact('student_year','student_class','student_group','student_shift','data'));
+
+    }//End Method
+
+    public function PromotionStudentRegister(Request $request,$studetn_id){
+        $assign_student = new AssignStudent();
+        $assign_student->studetn_id = $studetn_id;
+        $assign_student->class_id = $request->class_id;
+        $assign_student->year_id = $request->year_id;
+        $assign_student->group_id = $request->group_id;
+        $assign_student->shift_id = $request->shift_id;
+        $assign_student->save();
+
+        $dicount_student = new DiscountStudent();
+        $dicount_student->assign_student_id = $assign_student->id;
+        $dicount_student->fee_category_id = '1';
+        $dicount_student->discount = $request->discount;
+        $dicount_student->save();
+
+    $notification = array(
+        'message' => 'Student Promotion Updated successfully!',
+        'alert-type' => 'success'
+    );
+   return redirect()->route('student.registration.view')->with($notification);
+   }//End Method
+
+
+
+
 
 
 
