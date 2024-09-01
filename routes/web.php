@@ -162,6 +162,7 @@ Route::middleware('auth')->group(function () {
         Route::post('store/student/registration', 'StoreStudentRegister')->name('store.student.registration');
         Route::get('student/year/class/wise', 'StudentClassYearWise')->name('student.year.class.wise');
         Route::get('student/registration/edit/{studetn_id}', 'StudentRegEdit')->name('student.registration.edit');
+        Route::post('update/student/registration/{studetn_id}', 'UpdateStudentRegister')->name('update.student.registration');
     });
 
 

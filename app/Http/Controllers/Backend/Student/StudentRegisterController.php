@@ -137,6 +137,44 @@ class StudentRegisterController extends Controller
 
     }//End Method
 
+    public function UpdateStudentRegister(Request $request,$studetn_id){
+        $user = User::where('id',$studetn_id)->first();
+        $user->name = $request->name;
+        $user->fname = $request->fname;
+        $user->mname = $request->mname;
+        $user->phone = $request->phone;
+        $user->address = $request->address;
+        $user->gender = $request->gender;
+        $user->religion = $request->religion;
+        $user->dob = date('Y-m-d',strtotime($request->dob));
+
+        if ($request->file('photo')) {
+            $file = $request->file('photo');
+            @unlink(public_path('upload/student_images/'.$user->photo));
+            $filename = date('YmdHi').$file->getClientOriginalName();
+            $file->move(public_path('upload/student_images'),$filename);
+            $user['photo'] = $filename;
+        }
+        $user->save();
+
+        $assign_student =AssignStudent::where('id',$request->id)->where('studetn_id',$studetn_id)->first();
+        $assign_student->class_id = $request->class_id;
+        $assign_student->year_id = $request->year_id;
+        $assign_student->group_id = $request->group_id;
+        $assign_student->shift_id = $request->shift_id;
+        $assign_student->save();
+
+        $dicount_student = DiscountStudent::where('assign_student_id',$request->id)->first();
+        $dicount_student->discount = $request->discount;
+        $dicount_student->save();
+
+    $notification = array(
+        'message' => 'Student Registration Updated successfully!',
+        'alert-type' => 'success'
+    );
+   return redirect()->route('student.registration.view')->with($notification);
+    }//End Method
+
 
 
 

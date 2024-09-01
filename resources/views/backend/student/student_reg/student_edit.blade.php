@@ -14,8 +14,9 @@
 			<div class="box-body">
 			  <div class="row">
 				<div class="col">
-					<form method="POST" action="{{ route('store.student.registration') }}" enctype="multipart/form-data">
+					<form method="POST" action="{{ route('update.student.registration',$data->studetn_id) }}" enctype="multipart/form-data">
 						@csrf
+						<input type="hidden" name="id" value="{{ $data->id }}">
 					  <div class="row">
 						<div class="col-12">
 							<div class="row">
@@ -205,7 +206,7 @@
 						</div>
 					  </div>
 						<div class="text-xs-right">
-					<input type="submit" class="btn btn-info" value="Submit">
+					<input type="submit" class="btn btn-info" value="Update">
 						</div>
 					</form>
 
