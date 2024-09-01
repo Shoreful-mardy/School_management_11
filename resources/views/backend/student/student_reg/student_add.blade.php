@@ -178,7 +178,7 @@
 										<h5>Shift<span class="text-danger">*</span></h5>
 										<div class="controls">
 											<select name="shift_id" id="shift_id"  class="form-control">
-												<option value="" selected="" disabled="">Select Year</option>
+												<option value="" selected="" disabled="">Select Shift</option>
 												@foreach($student_shift as $item)
 												<option value="{{$item->id}}">{{$item->name}}</option>
 												@endforeach
