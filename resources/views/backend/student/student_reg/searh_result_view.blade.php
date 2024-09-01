@@ -66,7 +66,8 @@
 				<!-- /.box-header -->
 				<div class="box-body">
 					<div class="table-responsive">
-					  <table id="example1" class="table table-bordered table-striped">
+						@if(!empty($data))
+						<table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>
 								<th width="5%">Sl</th>
@@ -118,6 +119,11 @@
 							</tr>
 						</tfoot>
 					  </table>
+						@else
+						<h3 class="text-danger"> Sorry Not Found Student </h3>
+						
+						@endif
+					  
 					</div>
 				</div>
 				<!-- /.box-body -->

@@ -21,8 +21,17 @@ class StudentRegisterController extends Controller
         $student_class = StudentClass::all();
         $year_id = StudentYear::orderBy('id','desc')->first()->id;
         $class_id = StudentClass::orderBy('id','desc')->first()->id;
-        $data = AssignStudent::where('year_id',$year_id)->where('class_id',$class_id)->get();
+        $data = AssignStudent::where('year_id',$year_id)->where('class_id',$class_id)->orderBy('id','desc')->get();
         return view('backend.student.student_reg.student_view',compact('data','student_year','student_class','year_id','class_id'));
+    }//End Method
+
+    public function StudentClassYearWise(Request $request){
+        $student_year = StudentYear::all();
+        $student_class = StudentClass::all();
+        $year_id = $request->year_id;
+        $class_id = $request->class_id;
+        $data = AssignStudent::where('year_id',$year_id)->where('class_id',$class_id)->orderBy('id','desc')->get();
+        return view('backend.student.student_reg.searh_result_view',compact('data','student_year','student_class','year_id','class_id'));
     }//End Method
 
     public function StudentRegisterAdd(){
@@ -116,6 +125,8 @@ class StudentRegisterController extends Controller
     );
    return redirect()->route('student.registration.view')->with($notification);
     }//End Method
+
+
 
 
 
