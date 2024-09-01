@@ -13,6 +13,7 @@ use App\Models\StudentGroup;
 use App\Models\StudentShift;
 use Illuminate\Support\Facades\Hash;
 use DB;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class StudentRegisterController extends Controller
 {
@@ -206,6 +207,21 @@ class StudentRegisterController extends Controller
     );
    return redirect()->route('student.registration.view')->with($notification);
    }//End Method
+   public function StudentRegDetails($studetn_id){
+
+        $item = AssignStudent::with(['student','discount'])->where('studetn_id',$studetn_id)->first();
+        $data = [
+            'title' => 'Practice this',
+            'date' => date('m/d/y'),
+            'item' => $item,
+        ];
+
+
+        $pdf = Pdf::loadView('backend.student.student_reg.student_details_pdf', $data);
+        
+        return $pdf->stream('student_info.pdf');
+
+    }//End Method
 
 
 

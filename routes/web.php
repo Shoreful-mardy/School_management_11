@@ -165,6 +165,7 @@ Route::middleware('auth')->group(function () {
         Route::post('update/student/registration/{studetn_id}', 'UpdateStudentRegister')->name('update.student.registration');
         Route::get('student/registration/promotion/{id}', 'StudentRegPromote')->name('student.registration.promotion');
         Route::post('promotion/student/registration/{studetn_id}', 'PromotionStudentRegister')->name('promotion.student.registration');
+        Route::get('student/registration/details/{studetn_id}', 'StudentRegDetails')->name('student.registration.details');
     });
 
 

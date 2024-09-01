@@ -97,8 +97,9 @@
 								<td>{{ $item->class->name}}</td>
 								<td>{{ $item->student->code}}</td>
 								<td>
-									<a href="{{ route('student.registration.edit',$item->studetn_id) }}" class="btn btn-info">Edit</a>
-									<a href="{{ route('student.registration.promotion',$item->id) }}"  class="btn btn-danger">Promotion</a>
+									<a title="Edit" href="{{ route('student.registration.edit',$item->studetn_id) }}" class="btn btn-info"><i class="fa fa-edit"></i></a>
+									<a title="Promotion" href="{{ route('student.registration.promotion',$item->id) }}"  class="btn btn-primary"><i class="fa fa-check"></i></a>
+									<a title="Details" href="{{ route('student.registration.details',$item->studetn_id) }}" target="_blank"  class="btn btn-danger"><i class="fa fa-eye"></i></a>
 								</td>
 							</tr>
 							@endforeach
