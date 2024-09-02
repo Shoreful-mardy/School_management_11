@@ -15,7 +15,8 @@
 				  </div>
 
 				  <div class="box-body">
-					<form method="Get" action="{{ route('student.year.class.wise') }}">
+					<form method="POST" action="{{ route('roll.generate.store') }}">
+						@csrf
 						<div class="row">
 							<div class="col-md-4">
 									<div class="form-group">
@@ -49,6 +50,7 @@
 						</div><!-- End Row -->
 	<!-- ///// Roll Generate Table ///// -->
 	<div class="row d-none" id="roll-generate">
+		<br>
 		<div class="col-md-12">
 			<table class="table table-bordered table-striped" style="widows: 100%;">
 				<thead>
@@ -105,7 +107,7 @@
         $.each( data, function(key, v){
           html +=
           '<tr>'+
-          '<td>'+v.student.id_no+'<input type="hidden" name="student_id[]" value="'+v.student_id+'"></td>'+
+          '<td>'+v.student.id_no+'<input type="hidden" name="student_id[]" value="'+v.studetn_id+'"></td>'+
           '<td>'+v.student.name+'</td>'+
           '<td>'+v.student.fname+'</td>'+
           '<td>'+v.student.mname+'</td>'+

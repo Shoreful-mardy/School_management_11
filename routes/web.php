@@ -173,6 +173,7 @@ Route::middleware('auth')->group(function () {
     Route::controller(StudentRollController::class)->group(function () {
         Route::get('roll/generate/view', 'StudentRollView')->name('roll.generate.view');
         Route::get('student/registration/getstudents', 'GetStudents')->name('student.registration.getstudents');
+        Route::post('roll/generate/store', 'RollGenerateStore')->name('roll.generate.store');
     });
 
 

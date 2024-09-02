@@ -26,6 +26,27 @@ class StudentRollController extends Controller
         return response()->json($allData);
     }//End Method
 
+    public function RollGenerateStore(Request $request){
+        $year_id = $request->year_id;
+        $class_id = $request->class_id;
+        if ($request->student_id !=null) {
+            for ($i=0; $i < count($request->student_id); $i++) { 
+                AssignStudent::where('year_id',$year_id)->where('class_id',$class_id)->where('studetn_id',$request->student_id[$i])->update(['roll' => $request->roll[$i] ]);
+            }//End For Loop
+        }else{
+            $notification = array(
+                'message' => 'Sorry! There are no Student',
+                'alert-type' => 'error'
+            );
+           return redirect()->back()->with($notification);
+        }//End if else
+        $notification = array(
+            'message' => 'Well Done! Student Roll Updated Successfully',
+            'alert-type' => 'success'
+        );
+       return redirect()->route('roll.generate.view')->with($notification);
+    }//End Method
+
 
 
 
