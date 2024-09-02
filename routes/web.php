@@ -172,6 +172,7 @@ Route::middleware('auth')->group(function () {
     // Student Management Roll Generate All Route
     Route::controller(StudentRollController::class)->group(function () {
         Route::get('roll/generate/view', 'StudentRollView')->name('roll.generate.view');
+        Route::get('student/registration/getstudents', 'GetStudents')->name('student.registration.getstudents');
     });
 
 

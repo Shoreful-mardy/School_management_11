@@ -21,6 +21,10 @@ class StudentRollController extends Controller
         return view('backend.student.roll_generate.roll_generate_view',compact('student_year','student_class'));
 
     }//End Method
+    public function GetStudents(Request $request){
+        $allData = AssignStudent::with(['student'])->where('year_id',$request->year_id)->where('class_id',$request->class_id)->get();
+        return response()->json($allData);
+    }//End Method
 
 
 
