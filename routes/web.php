@@ -17,6 +17,7 @@ use App\Http\Controllers\Backend\Setup\AssignSubjectController;
 use App\Http\Controllers\Backend\Setup\DesignationController;
 use App\Http\Controllers\Backend\Student\StudentRegisterController;
 use App\Http\Controllers\Backend\Student\StudentRollController;
+use App\Http\Controllers\Backend\Student\RegistrationFeeController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -174,6 +175,11 @@ Route::middleware('auth')->group(function () {
         Route::get('roll/generate/view', 'StudentRollView')->name('roll.generate.view');
         Route::get('student/registration/getstudents', 'GetStudents')->name('student.registration.getstudents');
         Route::post('roll/generate/store', 'RollGenerateStore')->name('roll.generate.store');
+    });
+
+    // Student Management Registration Fee All Route
+    Route::controller(RegistrationFeeController::class)->group(function () {
+        Route::get('registration/fee/view', 'StudentRollView')->name('registration.fee.view');
     });
 
 
