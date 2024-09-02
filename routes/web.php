@@ -16,6 +16,7 @@ use App\Http\Controllers\Backend\Setup\SubjectController;
 use App\Http\Controllers\Backend\Setup\AssignSubjectController;
 use App\Http\Controllers\Backend\Setup\DesignationController;
 use App\Http\Controllers\Backend\Student\StudentRegisterController;
+use App\Http\Controllers\Backend\Student\StudentRollController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -166,6 +167,11 @@ Route::middleware('auth')->group(function () {
         Route::get('student/registration/promotion/{id}', 'StudentRegPromote')->name('student.registration.promotion');
         Route::post('promotion/student/registration/{studetn_id}', 'PromotionStudentRegister')->name('promotion.student.registration');
         Route::get('student/registration/details/{studetn_id}', 'StudentRegDetails')->name('student.registration.details');
+    });
+
+    // Student Management Roll Generate All Route
+    Route::controller(StudentRollController::class)->group(function () {
+        Route::get('roll/generate/view', 'StudentRollView')->name('roll.generate.view');
     });
 
 

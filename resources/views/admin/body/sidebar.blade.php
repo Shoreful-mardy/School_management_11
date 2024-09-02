@@ -79,7 +79,7 @@
             <li><a href="{{ route('designation.view')}}"><i class="ti-more"></i>Designation</a></li>
           </ul>
         </li> 
-         <li class="treeview {{Route::currentRouteName() === 'student.registration.view' ? 'active' : ''  }}">
+         <li class="treeview {{ Route::currentRouteName() === 'student.registration.view' || Route::currentRouteName() === 'roll.generate.view' ? 'active' : '' }}">
           <a href="#">
             <i data-feather="message-circle"></i>
             <span>Student Management</span>
@@ -89,6 +89,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{{ route('student.registration.view')}}"><i class="ti-more"></i>Student Registration</a></li>
+            <li><a href="{{ route('roll.generate.view')}}"><i class="ti-more"></i>Roll Generate</a></li>
           </ul>
         </li>
 			  
