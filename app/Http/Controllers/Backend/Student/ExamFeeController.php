@@ -62,13 +62,31 @@ class ExamFeeController extends Controller
 
             $html[$key]['tdsource'] .='<td>'.$finalfee.'$'.'</td>';
             $html[$key]['tdsource'] .='<td>';
-            $html[$key]['tdsource'] .='<a class="btn btn-sm btn-'.$color.'" title="PaySlip" target="_blanks" href="'.route("student.monthly.fee.payslip").'?class_id='.$v->class_id.'&studetn_id='.$v->studetn_id.'&exam_type_id='.$request->exam_type_id.' ">Fee Slip</a>';
+            $html[$key]['tdsource'] .='<a class="btn btn-sm btn-'.$color.'" title="PaySlip" target="_blanks" href="'.route("student.exam.fee.payslip").'?class_id='.$v->class_id.'&studetn_id='.$v->studetn_id.'&exam_type_id='.$request->exam_type_id.' ">Fee Slip</a>';
             $html[$key]['tdsource'] .= '</td>';
 
          }  
         return response()->json(@$html);
 
 
+    }//End Method
+
+    public function ExamFeePayslip(Request $request){
+        $student_id = $request->studetn_id;
+        $class_id = $request->class_id;
+        $exam_type = ExamType::where('id',$request->exam_type_id)->first()['name'];
+        $item = AssignStudent::with(['student','discount'])->where('studetn_id',$student_id)->where('class_id',$class_id)->first();
+        $data = [
+            'title' => 'Student Exam FeeCategoryAmount',
+            'date' => date('m/d/y'),
+            'item' => $item,
+            'exam_type' => $exam_type,
+        ];
+
+
+        $pdf = Pdf::loadView('backend.student.exam_fee.exam_fee_slip', $data);
+        
+        return $pdf->stream('monthly_fee.pdf');
     }//End Method
 
 

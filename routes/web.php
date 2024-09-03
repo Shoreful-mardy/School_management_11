@@ -197,7 +197,7 @@ Route::middleware('auth')->group(function () {
     Route::controller(ExamFeeController::class)->group(function () {
         Route::get('exam/fee/view', 'ExamFeeView')->name('exam.fee.view');
         Route::get('exam/fee/classwise', 'ExamFeeClassWise')->name('student.exam.fee.classwise.get');
-
+        Route::get('exam/fee/payslip', 'ExamFeePayslip')->name('student.exam.fee.payslip');
     });
 
 
