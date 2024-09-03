@@ -79,7 +79,7 @@
             <li><a href="{{ route('designation.view')}}"><i class="ti-more"></i>Designation</a></li>
           </ul>
         </li> 
-         <li class="treeview {{ Route::currentRouteName() === 'student.registration.view' || Route::currentRouteName() === 'roll.generate.view'|| Route::currentRouteName() === 'registration.fee.view' ? 'active' : '' }}">
+         <li class="treeview {{ Route::currentRouteName() === 'student.registration.view' || Route::currentRouteName() === 'roll.generate.view'|| Route::currentRouteName() === 'registration.fee.view' || Route::currentRouteName() === 'monthly.fee.view' ? 'active' : '' }}">
           <a href="#">
             <i data-feather="message-circle"></i>
             <span>Student Management</span>
@@ -91,6 +91,7 @@
             <li><a href="{{ route('student.registration.view')}}"><i class="ti-more"></i>Student Registration</a></li>
             <li><a href="{{ route('roll.generate.view')}}"><i class="ti-more"></i>Roll Generate</a></li>
             <li><a href="{{ route('registration.fee.view')}}"><i class="ti-more"></i>Registration Fee</a></li>
+            <li><a href="{{ route('monthly.fee.view')}}"><i class="ti-more"></i>Monthly Fee</a></li>
           </ul>
         </li>
 			  

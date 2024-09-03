@@ -18,6 +18,7 @@ use App\Http\Controllers\Backend\Setup\DesignationController;
 use App\Http\Controllers\Backend\Student\StudentRegisterController;
 use App\Http\Controllers\Backend\Student\StudentRollController;
 use App\Http\Controllers\Backend\Student\RegistrationFeeController;
+use App\Http\Controllers\Backend\Student\MonthlyFeeController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -179,9 +180,14 @@ Route::middleware('auth')->group(function () {
 
     // Student Management Registration Fee All Route
     Route::controller(RegistrationFeeController::class)->group(function () {
-        Route::get('registration/fee/view', 'StudentRollView')->name('registration.fee.view');
+        Route::get('registration/fee/view', 'RegistrationFeeView')->name('registration.fee.view');
         Route::get('registration/fee/classwise', 'RegistrationFeeClassWise')->name('student.registration.fee.classwise.get');
         Route::get('registration/fee/payslip', 'RegistrationFeePayslip')->name('student.registration.fee.payslip');
+    });
+
+    // Student Management Monthly Fee All Route
+    Route::controller(MonthlyFeeController::class)->group(function () {
+        Route::get('monthly/fee/view', 'MonthlyFeeView')->name('monthly.fee.view');
     });
 
 

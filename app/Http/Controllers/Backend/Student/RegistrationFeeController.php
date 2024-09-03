@@ -16,7 +16,7 @@ use Barryvdh\DomPDF\Facade\Pdf;
 
 class RegistrationFeeController extends Controller
 {
-    public function StudentRollView(){
+    public function RegistrationFeeView(){
         $student_year = StudentYear::all();
         $student_class = StudentClass::all();
         return view('backend.student.registration_fee.registration_view',compact('student_year','student_class'));
