@@ -188,6 +188,7 @@ Route::middleware('auth')->group(function () {
     // Student Management Monthly Fee All Route
     Route::controller(MonthlyFeeController::class)->group(function () {
         Route::get('monthly/fee/view', 'MonthlyFeeView')->name('monthly.fee.view');
+        Route::get('monthly/fee/classwise', 'MonthlyFeeClassWise')->name('student.monthly.fee.classwise.get');
     });
 
 

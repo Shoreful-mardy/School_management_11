@@ -114,7 +114,7 @@
     var class_id = $('#class_id').val();
     var month = $('#month').val();
      $.ajax({
-      url: "{{ route('student.registration.fee.classwise.get')}}",
+      url: "{{ route('student.monthly.fee.classwise.get')}}",
       type: "get",
       data: {'year_id':year_id,'class_id':class_id,'month':month},
       beforeSend: function() {       
