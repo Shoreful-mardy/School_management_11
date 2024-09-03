@@ -180,6 +180,8 @@ Route::middleware('auth')->group(function () {
     // Student Management Registration Fee All Route
     Route::controller(RegistrationFeeController::class)->group(function () {
         Route::get('registration/fee/view', 'StudentRollView')->name('registration.fee.view');
+        Route::get('registration/fee/classwise', 'RegistrationFeeClassWise')->name('student.registration.fee.classwise.get');
+        Route::get('registration/fee/payslip', 'RegistrationFeePayslip')->name('student.registration.fee.payslip');
     });
 
 

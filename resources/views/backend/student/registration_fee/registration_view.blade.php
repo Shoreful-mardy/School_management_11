@@ -1,6 +1,7 @@
  @extends('admin.admin_master')
  @section('admin')
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js" integrity="sha512-E1dSFxg+wsfJ4HKjutk/WaCzK7S2wv1POn1RRPGh8ZK+ag9l244Vqxji3r6wgz9YBf6+vhQEYJZpSjqWFPg9gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
  <div class="content-wrapper">
 	  <div class="container-full">
 		<!-- Content Header (Page header) -->
@@ -83,35 +84,29 @@
 	  
 	  </div>
   </div>
-<!--// Start Roll Generated ===========-->
+<!--// Get Registration Fee  ===========-->
 
 <script type="text/javascript">
   $(document).on('click','#search',function(){
     var year_id = $('#year_id').val();
     var class_id = $('#class_id').val();
      $.ajax({
-      url: "{{ route('student.registration.getstudents')}}",
-      type: "GET",
+      url: "{{ route('student.registration.fee.classwise.get')}}",
+      type: "get",
       data: {'year_id':year_id,'class_id':class_id},
+      beforeSend: function() {       
+      },
       success: function (data) {
-        $('#roll-generate').removeClass('d-none');
-        var html = '';
-        $.each( data, function(key, v){
-          html +=
-          '<tr>'+
-          '<td>'+v.student.id_no+'<input type="hidden" name="student_id[]" value="'+v.studetn_id+'"></td>'+
-          '<td>'+v.student.name+'</td>'+
-          '<td>'+v.student.fname+'</td>'+
-          '<td>'+v.student.mname+'</td>'+
-          '<td>'+v.student.gender+'</td>'+
-          '<td><input type="text" class="form-control form-control-sm" name="roll[]" value="'+v.roll+'"></td>'+
-          '</tr>';
-        });
-        html = $('#roll-generate-tr').html(html);
+        var source = $("#document-template").html();
+        var template = Handlebars.compile(source);
+        var html = template(data);
+        $('#DocumentResults').html(html);
+        $('[data-toggle="tooltip"]').tooltip();
       }
     });
   });
 
 </script>
+
 
 @endsection
