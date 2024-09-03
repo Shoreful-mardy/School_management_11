@@ -70,8 +70,20 @@ class RegistrationFeeController extends Controller
 
     }//End Method
 
-    public function RegistrationFeePayslip(){
+    public function RegistrationFeePayslip(Request $request){
+        $student_id = $request->studetn_id;
+        $class_id = $request->class_id;
+        $item = AssignStudent::with(['student','discount'])->where('studetn_id',$student_id)->where('class_id',$class_id)->first();
+        $data = [
+            'title' => 'Student Details',
+            'date' => date('m/d/y'),
+            'item' => $item,
+        ];
 
+
+        $pdf = Pdf::loadView('backend.student.registration_fee.student_fee_slip', $data);
+        
+        return $pdf->stream('registration_fee.pdf');
     }//End Method
 
 
