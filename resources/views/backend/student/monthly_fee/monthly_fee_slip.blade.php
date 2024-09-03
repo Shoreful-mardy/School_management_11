@@ -37,7 +37,10 @@
 @endphp
 <table id="customers">
   <tr>
-    <td><h2>Easy Learning</h2></td>
+    <td><h2>
+      <? $image_path = '/upload/logo.jpg'; ?>
+      <img src="{{ public_path('/upload/logo.jpg') }}" width="200" height="100">
+    </h2></td>
     <td>
       <h2>Easy School ERP </h2>
       <p>School Address</p>
