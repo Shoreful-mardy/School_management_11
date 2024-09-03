@@ -189,6 +189,7 @@ Route::middleware('auth')->group(function () {
     Route::controller(MonthlyFeeController::class)->group(function () {
         Route::get('monthly/fee/view', 'MonthlyFeeView')->name('monthly.fee.view');
         Route::get('monthly/fee/classwise', 'MonthlyFeeClassWise')->name('student.monthly.fee.classwise.get');
+        Route::get('monthly/fee/payslip', 'MonthlyFeePayslip')->name('student.monthly.fee.payslip');
     });
 
 
