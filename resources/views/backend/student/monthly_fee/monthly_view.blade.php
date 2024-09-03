@@ -17,7 +17,7 @@
 
 				  <div class="box-body">
 						<div class="row">
-							<div class="col-md-4">
+							<div class="col-md-3">
 									<div class="form-group">
 										<h5>Year<span class="text-danger"></span></h5>
 										<div class="controls">
@@ -29,8 +29,8 @@
 											</select>
 										</div>
 									</div>
-								</div><!-- col-md-4  -->
-								<div class="col-md-4">
+								</div><!-- col-md-3  -->
+								<div class="col-md-3">
 									<div class="form-group">
 										<h5>Class<span class="text-danger"></span></h5>
 										<div class="controls">
@@ -42,10 +42,32 @@
 											</select>
 										</div>
 									</div>
-								</div><!-- col-md-4  -->
-								<div class="col-md-4" style="padding-top: 25px;">
+								</div><!-- col-md-3  -->
+								<div class="col-md-3">
+									<div class="form-group">
+										<h5>Month<span class="text-danger"></span></h5>
+										<div class="controls">
+											<select name="month" id="month"  class="form-control">
+												<option value="" selected="" disabled="">Select Month</option>
+												<option value="January">January</option>
+												<option value="February">February</option>
+												<option value="March">March</option>
+												<option value="April">April</option>
+												<option value="May">May</option>
+												<option value="Jun">Jun</option>
+												<option value="July">July</option>
+												<option value="August">August</option>
+												<option value="September">September</option>
+												<option value="October">October</option>
+												<option value="November">November</option>
+												<option value="December">December</option>
+											</select>
+										</div>
+									</div>
+								</div><!-- col-md-3  -->
+								<div class="col-md-3" style="padding-top: 25px;">
 									<a id="search" class="btn btn-primary" name="search">Search</a>
-								</div><!-- col-md-4  -->
+								</div><!-- col-md-3  -->
 						</div><!-- End Row -->
 	<!-- ///// Registration Fee Table Started From Here ///// -->
 	<div class="row" >
@@ -90,10 +112,11 @@
   $(document).on('click','#search',function(){
     var year_id = $('#year_id').val();
     var class_id = $('#class_id').val();
+    var month = $('#month').val();
      $.ajax({
       url: "{{ route('student.registration.fee.classwise.get')}}",
       type: "get",
-      data: {'year_id':year_id,'class_id':class_id},
+      data: {'year_id':year_id,'class_id':class_id,'month':month},
       beforeSend: function() {       
       },
       success: function (data) {
