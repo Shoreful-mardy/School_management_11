@@ -15,6 +15,11 @@ class EmployeeRegController extends Controller
         return view('backend.employee.employee_reg.employee_view',compact('alldata'));
     }//End Method
 
+    public function AddEmpployeReg(){
+        $designation = Designation::all();
+        return view('backend.employee.employee_reg.employee_add',compact('designation'));
+    }//End Method
+
 
 
 

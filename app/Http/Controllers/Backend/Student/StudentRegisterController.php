@@ -45,7 +45,7 @@ class StudentRegisterController extends Controller
 
     public function StoreStudentRegister(Request $request){
         $validatedData = $request->validate([
-            'name' => 'required|unique:users,name',
+            'name' => 'required',
             'fname' => 'required',
             'mname' => 'required',
             'phone' => 'required',

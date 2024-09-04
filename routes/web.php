@@ -204,6 +204,7 @@ Route::middleware('auth')->group(function () {
     // Employe Management  All Route
     Route::controller(EmployeeRegController::class)->group(function () {
         Route::get('employe/registration/view', 'EmpployeView')->name('employe.registration.view');
+        Route::get('add/employee/registration', 'AddEmpployeReg')->name('add.employee.registration');
     });
 
 
