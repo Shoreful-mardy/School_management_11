@@ -14,7 +14,7 @@
 			<div class="box-body">
 			  <div class="row">
 				<div class="col">
-					<form method="POST" action="{{ route('store.employe.registration') }}" enctype="multipart/form-data">
+					<form method="POST" action="{{ route('update.employe.registration',$user->id) }}" enctype="multipart/form-data">
 						@csrf
 					  <div class="row">
 						<div class="col-12">
@@ -136,48 +136,26 @@
 								</div><!-- col-md-4  -->
 							</div><!-- end 3rd row  -->
 							<div class="row">
-								<div class="col-md-3">
-									<div class="form-group">
-										<h5>Salary<span class="text-danger">*</span></h5>
-										<div class="controls">
-											<input type="text" name="salary" id="salary" value="{{$user->salary}}" class="form-control" >
-											@error('salary')
-											<span class="text-danger">{{ $message }}</span>
-											@enderror
-										</div>
-									</div>
-								</div><!-- col-md-3  -->
-								<div class="col-md-3">
-									<div class="form-group">
-										<h5>Join Date<span class="text-danger">*</span></h5>
-										<div class="controls">
-											<input type="date" name="join_date" id="join_date" value="{{$user->join_date}}" class="form-control" >
-											@error('join_date')
-											<span class="text-danger">{{ $message }}</span>
-											@enderror
-										</div>
-									</div>
-								</div><!-- col-md-3  -->
-								<div class="col-md-3">
+								<div class="col-md-4">
 									<div class="form-group">
 										<h5>Employee Image<span class="text-danger">*</span></h5>
 										<div class="controls">
 											<input type="file" name="photo" id="photo" class="form-control" >
 											</div>
 									</div>
-								</div><!-- col-md-3  -->
-								<div class="col-md-3">
+								</div><!-- col-md-4  -->
+								<div class="col-md-4">
 									<div class="form-group">
 										<div class="controls">
 											<img id="showImage" src="{{  url('upload/employee_images/'.$user->photo)}}" style="width:100px; border: 1px solid black;">
 										</div>
 									</div>
-								</div><!-- col-md-3  -->
+								</div><!-- col-md-4  -->
 							</div><!-- end 4th row  -->
 						</div>
 					  </div>
 						<div class="text-xs-right">
-					<input type="submit" class="btn btn-info" value="Submit">
+					<input type="submit" class="btn btn-info" value="Update">
 						</div>
 					</form>
 

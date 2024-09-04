@@ -107,6 +107,46 @@ class EmployeeRegController extends Controller
 
     }//End Method
 
+    public function UpdateEmpployeReg(Request $request,$id){
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'fname' => 'required',
+            'mname' => 'required',
+            'phone' => 'required',
+            'address' => 'required',
+            'gender' => 'required',
+            'dob' => 'required',
+            'designation_id' => 'required',
+            'photo' => 'required',
+        ]);
+        $user = User::find($id);
+
+        $user->name = $request->name;
+        $user->fname = $request->fname;
+        $user->mname = $request->mname;
+        $user->phone = $request->phone;
+        $user->address = $request->address;
+        $user->gender = $request->gender;
+        $user->religion = $request->religion;
+        $user->designation_id = $request->designation_id;
+        $user->dob = date('Y-m-d',strtotime($request->dob));
+
+        if ($request->file('photo')) {
+            @unlink(public_path('upload/employee_images/'.$user->photo) );
+            $file = $request->file('photo');
+            $filename = date('YmdHi').$file->getClientOriginalName();
+            $file->move(public_path('upload/employee_images'),$filename);
+            $user['photo'] = $filename;
+        }
+        $user->save();
+
+    $notification = array(
+        'message' => 'Employee Updated successfully!',
+        'alert-type' => 'success'
+    );
+   return redirect()->route('employe.registration.view')->with($notification);
+    }//End Method
+
 
 
 
