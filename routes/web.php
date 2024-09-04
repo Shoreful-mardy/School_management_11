@@ -208,6 +208,8 @@ Route::middleware('auth')->group(function () {
         Route::post('store/employee/registration', 'StoreEmpployeReg')->name('store.employe.registration');
         Route::get('edit/employee/registration/{id}', 'EditEmpployeReg')->name('employee.registration.edit');
         Route::post('update/employee/registration/{id}', 'UpdateEmpployeReg')->name('update.employe.registration');
+        Route::get('details/employee/registration/{employee_id}', 'EmployeeEmpployeReg')->name('employee.registration.details');
+
 
     });
 

@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\EmployeeSalaryLog;
 use App\Models\Designation;
 use Illuminate\Support\Facades\Hash;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class EmployeeRegController extends Controller
 {
@@ -145,6 +146,16 @@ class EmployeeRegController extends Controller
         'alert-type' => 'success'
     );
    return redirect()->route('employe.registration.view')->with($notification);
+    }//End Method
+    public function EmployeeEmpployeReg($employee_id){
+        $item = User::find($employee_id);
+        $data = [
+            'title' => 'Practice this',
+            'date' => date('m/d/y'),
+            'item' => $item,
+        ];
+        $pdf = Pdf::loadView('backend.employee.employee_reg.employee_details_pdf', $data);
+        return $pdf->stream('employee_info.pdf');
     }//End Method
 
 

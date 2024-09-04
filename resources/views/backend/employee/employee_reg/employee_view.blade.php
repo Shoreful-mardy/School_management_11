@@ -47,7 +47,7 @@
 						<td>{{ $item->code}}</td>
 						<td>
 							<a title="Edit" href="{{ route('employee.registration.edit',$item->id) }}" class="badge badge-warning">Edit</a>
-							<a title="Delete" href="{{ route('student.registration.details',$item->id) }}" id="delete" class="badge badge-danger">Delete</a>
+							<a title="Details" href="{{ route('employee.registration.details',$item->id) }}" target="_blank" class="badge badge-success">Details</a>
 						</td>
 					</tr>
 					@endforeach
