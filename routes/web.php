@@ -205,6 +205,7 @@ Route::middleware('auth')->group(function () {
     Route::controller(EmployeeRegController::class)->group(function () {
         Route::get('employe/registration/view', 'EmpployeView')->name('employe.registration.view');
         Route::get('add/employee/registration', 'AddEmpployeReg')->name('add.employee.registration');
+        Route::post('store/employee/registration', 'StoreEmpployeReg')->name('store.employe.registration');
     });
 
 

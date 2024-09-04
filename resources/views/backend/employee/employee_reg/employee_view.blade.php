@@ -31,12 +31,12 @@
 								<th>ID No</th>
 								<th>Mobile</th>
 								<th>Designation</th>
-								<th>Join Date</th>
+								<th>DOJ</th>
 								<th>Salary</th>
 								@if(Auth::user()->role == 'Admin')
 								<th>Code</th>
 								@endif
-								<th >Action</th>
+								<th width="20%">Action</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -45,8 +45,9 @@
 								<td>{{ $key+1}}</td>
 								<td>{{ $item->name}}</td>
 								<td>{{ $item->id_no}}</td>
+								<td>{{ $item->phone}}</td>
 								<td>{{ $item->designation->name}}</td>
-								<td>{{ $item->join_date}}</td>
+								<td>{{ date('d-m-Y',strtotime($item->join_date))}}</td>
 								<td>{{ $item->salary}}</td>
 								<td>{{ $item->code}}</td>
 								<td>
@@ -63,12 +64,12 @@
 								<th>ID No</th>
 								<th>Mobile</th>
 								<th>Designation</th>
-								<th>Join Date</th>
+								<th>DOJ</th>
 								<th>Salary</th>
 								@if(Auth::user()->role == 'Admin')
 								<th>Code</th>
 								@endif
-								<th >Action</th>
+								<th width="20%">Action</th>
 							</tr>
 						</tfoot>
 					  </table>
