@@ -44,4 +44,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function designation(){
+        return $this->belongsTo(Designation::class,'designation_id','id');
+    }
 }
