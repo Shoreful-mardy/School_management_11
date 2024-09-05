@@ -17,7 +17,7 @@
 			<div class="box-body">
 			  <div class="row">
 				<div class="col">
-					<form method="POST" action="{{ route('store.designation') }}">
+					<form method="POST" action="{{ route('update.increment.store',$editData->id) }}">
 						@csrf
 					  <div class="row">
 						<div class="col-md-6">
