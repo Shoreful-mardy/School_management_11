@@ -15,7 +15,7 @@
 			 <div class="box">
 				<div class="box-header with-border d-flex justify-content-between">
 				  <h3 class="box-title">Employee Leave List</h3>
-				  <a href="{{ route('add.designation') }}" class="btn btn-success" style="float: right;"><i class="ti-plus">Add Employee  Leave</i></a>
+				  <a href="{{ route('add.employee.leave') }}" class="btn btn-success" style="float: right;"><i class="ti-plus">Add Employee  Leave</i></a>
 				</div>
 
 

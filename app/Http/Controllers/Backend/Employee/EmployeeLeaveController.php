@@ -17,5 +17,25 @@ class EmployeeLeaveController extends Controller
     public function EmpployeLeaveView(){
         $data['alldata'] = EmployeeLeave::orderBy('id','DESC')->get();
         return view('backend.employee.employee_leave.employee_leave_view',$data);
-    }//End Method    
+    }//End Method  
+
+    public function EmpployeLeaveAdd(){
+        $data['employee'] = User::where('user_type','employee')->get();
+        $data['leave_purpose'] = LeavePurpose::all();
+        return view('backend.employee.employee_leave.employee_leave_add',$data);
+    } //End Method
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

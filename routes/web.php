@@ -223,6 +223,7 @@ Route::middleware('auth')->group(function () {
     // Employe Leave  All Route
     Route::controller(EmployeeLeaveController::class)->group(function () {
         Route::get('employe/leave/view', 'EmpployeLeaveView')->name('employe.leave.view');
+        Route::get('add/employee/leave', 'EmpployeLeaveAdd')->name('add.employee.leave');
     });
 
 
