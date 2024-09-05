@@ -22,6 +22,7 @@ use App\Http\Controllers\Backend\Student\MonthlyFeeController;
 use App\Http\Controllers\Backend\Student\ExamFeeController;
 use App\Http\Controllers\Backend\Employee\EmployeeRegController;
 use App\Http\Controllers\Backend\Employee\EmpoyeeSalaryController;
+use App\Http\Controllers\Backend\Employee\EmployeeLeaveController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -218,6 +219,12 @@ Route::middleware('auth')->group(function () {
         Route::post('update/increment/store/{id}', 'UpdateIncrementStore')->name('update.increment.store');
         Route::get('employee/salary/details/{id}', 'EmpployeSalaryDetails')->name('employee.salary.details');
     });
+
+    // Employe Leave  All Route
+    Route::controller(EmployeeLeaveController::class)->group(function () {
+        Route::get('employe/leave/view', 'EmpployeLeaveView')->name('employe.leave.view');
+    });
+
 
 
 

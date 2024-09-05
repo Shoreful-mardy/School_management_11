@@ -96,7 +96,7 @@
           </ul>
         </li>
 
-        <li class="treeview {{ Route::currentRouteName() === 'employe.registration.view' ||  Route::currentRouteName() === 'employe.salary.view' ? 'active' : '' }}">
+        <li class="treeview {{ Route::currentRouteName() === 'employe.registration.view' ||  Route::currentRouteName() === 'employe.salary.view' ||  Route::currentRouteName() === 'employe.leave.view' ? 'active' : '' }}">
           <a href="#">
             <i data-feather="message-circle"></i>
             <span>Employee Management</span>
@@ -107,6 +107,7 @@
           <ul class="treeview-menu">
             <li><a href="{{ route('employe.registration.view')}}"><i class="ti-more"></i>Employee Registration</a></li>
             <li><a href="{{ route('employe.salary.view')}}"><i class="ti-more"></i>Employee Salary</a></li>
+            <li><a href="{{ route('employe.leave.view')}}"><i class="ti-more"></i>Employee Leave</a></li>
           </ul>
         </li>
 			  
