@@ -43,7 +43,7 @@
 						<td style="font-size: 10px;">{{ date('d-m-Y',strtotime($item->join_date))}}</td>
 						<td>{{ $item->salary}}</td>
 						<td>
-							<a title="Increment" href="{{ route('employee.registration.edit',$item->id) }}" class="btn btn-info"><i class="fa fa-plus-circle"></i></a>
+							<a title="Increment" href="{{ route('employee.salary.increment',$item->id) }}" class="btn btn-info"><i class="fa fa-plus-circle"></i></a>
 							<a title="Details" href="{{ route('employee.registration.details',$item->id) }}" target="_blank" class="btn btn-danger"><i class="fa fa-eye"></i></a>
 						</td>
 					</tr>

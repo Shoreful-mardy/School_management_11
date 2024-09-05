@@ -214,6 +214,7 @@ Route::middleware('auth')->group(function () {
     // Employe Salary  All Route
     Route::controller(EmpoyeeSalaryController::class)->group(function () {
         Route::get('employe/salary/view', 'EmpployeSalaryView')->name('employe.salary.view');
+        Route::get('employe/salary/increment/{id}', 'EmpployeSalaryIncrement')->name('employee.salary.increment');
     });
 
 
