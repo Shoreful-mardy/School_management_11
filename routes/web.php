@@ -21,6 +21,7 @@ use App\Http\Controllers\Backend\Student\RegistrationFeeController;
 use App\Http\Controllers\Backend\Student\MonthlyFeeController;
 use App\Http\Controllers\Backend\Student\ExamFeeController;
 use App\Http\Controllers\Backend\Employee\EmployeeRegController;
+use App\Http\Controllers\Backend\Employee\EmpoyeeSalaryController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -209,8 +210,10 @@ Route::middleware('auth')->group(function () {
         Route::get('edit/employee/registration/{id}', 'EditEmpployeReg')->name('employee.registration.edit');
         Route::post('update/employee/registration/{id}', 'UpdateEmpployeReg')->name('update.employe.registration');
         Route::get('details/employee/registration/{employee_id}', 'EmployeeEmpployeReg')->name('employee.registration.details');
-
-
+    });
+    // Employe Salary  All Route
+    Route::controller(EmpoyeeSalaryController::class)->group(function () {
+        Route::get('employe/salary/view', 'EmpployeSalaryView')->name('employe.salary.view');
     });
 
 
