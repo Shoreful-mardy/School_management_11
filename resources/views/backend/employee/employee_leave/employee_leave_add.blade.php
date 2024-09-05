@@ -17,7 +17,7 @@
 			<div class="box-body">
 			  <div class="row">
 				<div class="col">
-					<form method="POST" action="">
+					<form method="POST" action="{{ route('employee.leave.store') }}">
 						@csrf
 					  <div class="row">
 					  	<div class="col-md-6">

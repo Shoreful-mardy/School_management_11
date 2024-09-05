@@ -41,8 +41,9 @@
 								<td>{{ $key+1}}</td>
 								<td>{{ $item->employee->name}}</td>
 								<td>{{ $item->employee->id_no}}</td>
-								<td>{{  date('d-m-y',strototime($item->start_date)) }}</td>
-								<td>{{  date('d-m-y',strototime($item->end_date)) }}</td>
+								<td>{{ $item->purpose->name }}</td>
+								<td>{{  date('d-m-Y',strtotime($item->start_date)) }}</td>
+								<td>{{  date('d-m-Y',strtotime($item->end_date)) }}</td>
 								<td>
 									<a href="{{ route('edit.designation',$item->id) }}" class="btn btn-info">Edit</a>
 									<a href="{{ route('delete.designation',$item->id) }}" id="delete" class="btn btn-danger">Delete</a>
