@@ -14,7 +14,7 @@
 
 			 <div class="box">
 				<div class="box-header with-border d-flex justify-content-between">
-				  <h3 class="box-title">Employee Attendance List</h3>
+				  <h3 class="box-title">Employee Attendance Details</h3>
 				  <a href="{{ route('add.employee.attendacne') }}" class="btn btn-success" style="float: right;"><i class="ti-plus">Add Attendance</i></a>
 				</div>
 
@@ -24,33 +24,36 @@
 				<div class="box-body">
 					<div class="table-responsive">
 					  <table id="example1" class="table table-bordered table-striped">
-						<thead>
-							<tr>
-								<th width="5%">Sl</th>
-								<th>Date</th>
-								<th width="20%">Action</th>
-							</tr>
-						</thead>
-						<tbody>
-							@foreach($alldata as $key => $item)
-							<tr>
-								<td>{{ $key+1}}</td>
-								<td>{{  date('d-m-Y',strtotime($item->date)) }}</td>
-								<td>
-									<a href="{{ route('edit.employee.attendance',$item->date) }}" class="btn btn-info">Edit</a>
-									<a href="{{ route('details.employee.attendance',$item->date) }}" class="btn btn-danger">Details</a>
-								</td>
-							</tr>
-							@endforeach
-						</tbody>
-						<tfoot>
-							<tr>
-								<th width="5%">Sl</th>
-								<th>Date</th>
-								<th width="20%">Action</th>
-							</tr>
-						</tfoot>
-					  </table>
+<thead>
+	<tr>
+		<th width="5%">Sl</th>
+		<th>Name</th>
+		<th>ID No</th>
+		<th>Date</th>
+		<th>Status</th>
+	</tr>
+</thead>
+<tbody>
+	@foreach($details as $key => $item)
+	<tr>
+		<td>{{ $key+1}}</td>
+		<td>{{ $item->employee->name}}</td>
+		<td>{{ $item->employee->id_no}}</td>
+		<td>{{  date('d-m-Y',strtotime($item->date)) }}</td>
+		<td>{{  $item->attend_status }}</td>
+	</tr>
+	@endforeach
+</tbody>
+<tfoot>
+	<tr>
+		<th width="5%">Sl</th>
+		<th>Name</th>
+		<th>ID No</th>
+		<th>Date</th>
+		<th>Status</th>
+	</tr>
+</tfoot>
+</table>
 					</div>
 				</div>
 				<!-- /.box-body -->
