@@ -227,6 +227,7 @@ Route::middleware('auth')->group(function () {
         Route::post('store/employee/leave', 'EmpployeLeaveStore')->name('employee.leave.store');
         Route::get('edit/employee/leave/{id}', 'EmpployeLeaveEdit')->name('edit.employee.leave');
         Route::post('edit/employee/update/{id}', 'EmpployeLeaveUpdate')->name('employee.leave.update');
+        Route::get('delete/employee/leave/{id}', 'EmpployeLeaveDelete')->name('delete.employee.leave');
     });
 
 
