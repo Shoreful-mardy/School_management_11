@@ -17,7 +17,7 @@
 <div class="box-body">
   <div class="row">
 	<div class="col">
-		<form method="POST" action="{{ route('store.designation') }}">
+		<form method="POST" action="{{ route('store.employee.attendacne') }}">
 			@csrf
 		  <div class="row">
 			<div class="col-12">
@@ -55,12 +55,14 @@
 					<td>{{$item->name}}</td>
 					<td colspan="3">
 						<div class="switch-toggle switch-3 switch-candy">
-							<input type="radio" checked="checked" id="present{{$key}}" value="Present" name="attend_status{{$key}}">
+							<input name="attend_status{{$key}}" type="radio"  value="Present" checked="checked" id="present{{$key}}" >
 							<label for="present{{$key}}">Present</label>
-							<input type="radio"  id="leave{{$key}}" value="Leave" name="attend_status{{$key}}">
+
+							<input name="attend_status{{$key}}" type="radio"  value="Leave" id="leave{{$key}}" >
 							<label for="leave{{$key}}">Leave</label>
-							<input type="radio"  id="Absent{{$key}}" value="Absent" name="attend_status{{$key}}">
-							<label for="Absent{{$key}}">Absent</label>
+
+							<input name="attend_status{{$key}}" type="radio"  value="Absent" id="absent{{$key}}" >
+							<label for="absent{{$key}}">Absent</label>
 						</div>
 					</td>
 				</tr>
