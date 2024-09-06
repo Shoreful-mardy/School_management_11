@@ -96,7 +96,7 @@
           </ul>
         </li>
 
-        <li class="treeview {{ Route::currentRouteName() === 'employe.registration.view' ||  Route::currentRouteName() === 'employe.salary.view' ||  Route::currentRouteName() === 'employe.leave.view' ||  Route::currentRouteName() === 'add.employee.leave' ? 'active' : '' }}">
+        <li class="treeview {{ Route::currentRouteName() === 'employe.registration.view' ||  Route::currentRouteName() === 'employe.salary.view' ||  Route::currentRouteName() === 'employe.leave.view' ||  Route::currentRouteName() === 'add.employee.leave' || Route::currentRouteName() === 'edit.employee.leave' ? 'active' : '' }}">
           <a href="#">
             <i data-feather="message-circle"></i>
             <span>Employee Management</span>

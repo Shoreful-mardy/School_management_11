@@ -45,7 +45,7 @@
 								<td>{{  date('d-m-Y',strtotime($item->start_date)) }}</td>
 								<td>{{  date('d-m-Y',strtotime($item->end_date)) }}</td>
 								<td>
-									<a href="{{ route('edit.designation',$item->id) }}" class="btn btn-info">Edit</a>
+									<a href="{{ route('edit.employee.leave',$item->id) }}" class="btn btn-info">Edit</a>
 									<a href="{{ route('delete.designation',$item->id) }}" id="delete" class="btn btn-danger">Delete</a>
 								</td>
 							</tr>
