@@ -37,8 +37,8 @@
 								<td>{{ $key+1}}</td>
 								<td>{{  date('d-m-Y',strtotime($item->date)) }}</td>
 								<td>
-									<a href="" class="btn btn-info">Edit</a>
-									<a href="" id="delete" class="btn btn-danger">Details</a>
+									<a href="{{ route('edit.employee.attendance',$item->date) }}" class="btn btn-info">Edit</a>
+									<a href="" class="btn btn-danger">Details</a>
 								</td>
 							</tr>
 							@endforeach
