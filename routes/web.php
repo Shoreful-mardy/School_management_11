@@ -23,6 +23,7 @@ use App\Http\Controllers\Backend\Student\ExamFeeController;
 use App\Http\Controllers\Backend\Employee\EmployeeRegController;
 use App\Http\Controllers\Backend\Employee\EmpoyeeSalaryController;
 use App\Http\Controllers\Backend\Employee\EmployeeLeaveController;
+use App\Http\Controllers\Backend\Employee\EmployeeAttendanceController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -230,12 +231,17 @@ Route::middleware('auth')->group(function () {
         Route::get('delete/employee/leave/{id}', 'EmpployeLeaveDelete')->name('delete.employee.leave');
     });
 
+    // Employe Attendance  All Route
+    Route::controller(EmployeeAttendanceController::class)->group(function () {
+        Route::get('employe/attendance/view', 'EmpployeeAttendanceView')->name('employe.attendance.view');
+    });
 
 
 
 
 
-});
+
+});//End Auth Middleware
 
 
 
