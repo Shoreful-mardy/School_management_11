@@ -16,6 +16,10 @@ class EmployeeAttendanceController extends Controller
         return view('backend.employee.employee_attendance.employee_attend_view',$data);
     }//End Method
 
+    public function EmpployeeAttendanceAdd(){
+        $data['employee'] = User::where('user_type','employee')->get();
+        return view('backend.employee.employee_attendance.employee_attend_add',$data);
+    }//End Method
 
 
 
@@ -24,7 +28,8 @@ class EmployeeAttendanceController extends Controller
 
 
 
-    
+
+
 
 
 }

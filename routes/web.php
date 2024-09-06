@@ -234,6 +234,7 @@ Route::middleware('auth')->group(function () {
     // Employe Attendance  All Route
     Route::controller(EmployeeAttendanceController::class)->group(function () {
         Route::get('employe/attendance/view', 'EmpployeeAttendanceView')->name('employe.attendance.view');
+        Route::get('add/employee/attendacne', 'EmpployeeAttendanceAdd')->name('add.employee.attendacne');
     });
 
 
