@@ -22,7 +22,7 @@
 									<div class="form-group">
 										<h5>Attendance Date<span class="text-danger">*</span></h5>
 										<div class="controls">
-											<input type="date" name="start_date"  class="form-control" required="">
+											<input type="date" name="date"  id="date" class="form-control" required="">
 										</div>
 									</div>
 								</div><!-- col-md-6  -->
@@ -35,6 +35,23 @@
 		<br>
 		<div class="col-md-12">
 			<div id="DocumentResults">
+				<script id="document-template" type="text/x-handlebars-template">
+				
+				<table class="table table-bordered table-striped" style="widows: 100%;">
+					<thead>
+						<tr>
+							@{{{thsource}}}
+						</tr>
+					</thead>
+					<tbody>
+						@{{#each this}}
+						<tr>
+							@{{{tdsource}}}
+						</tr>
+						@{{/each}}
+					</tbody>
+				</table>
+				</script>
 			</div>
 		</div><!-- End col-md-12 -->
 	</div><!-- End Row d-none -->
@@ -50,7 +67,28 @@
 	  
 	  </div>
   </div>
+<!--// Get Registration Fee  ===========-->
 
+<script type="text/javascript">
+  $(document).on('click','#search',function(){
+    var date = $('#date').val();
+     $.ajax({
+      url: "{{ route('employee.monthly.salary.get')}}",
+      type: "get",
+      data: {'date':date},
+      beforeSend: function() {       
+      },
+      success: function (data) {
+        var source = $("#document-template").html();
+        var template = Handlebars.compile(source);
+        var html = template(data);
+        $('#DocumentResults').html(html);
+        $('[data-toggle="tooltip"]').tooltip();
+      }
+    });
+  });
+
+</script>
 
 
 @endsection

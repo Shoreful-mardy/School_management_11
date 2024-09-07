@@ -244,6 +244,8 @@ Route::middleware('auth')->group(function () {
     // Employe Monthly Salary  All Route
     Route::controller(MonthlySalaryController::class)->group(function () {
         Route::get('employe/monthly/salary', 'EmpployeeMonthlySalary')->name('employe.monthly.salary');
+        Route::get('employe/monthly/salary/get', 'EmpployeeMonthlySalaryGet')->name('employee.monthly.salary.get');
+        Route::get('employe/monthly/salary/payslip', 'EmpployeeMonthlySalaryPayslip')->name('employee.monthly.salary.payslip');
     });
 
 
