@@ -96,7 +96,7 @@
           </ul>
         </li>
 
-        <li class="treeview {{ Route::currentRouteName() === 'employe.registration.view' ||  Route::currentRouteName() === 'employe.salary.view' ||  Route::currentRouteName() === 'employe.leave.view' ||  Route::currentRouteName() === 'add.employee.leave' || Route::currentRouteName() === 'edit.employee.leave' || Route::currentRouteName() === 'employe.attendance.view' || Route::currentRouteName() === 'edit.employee.attendance' ? 'active' : '' }}">
+        <li class="treeview {{ Route::currentRouteName() === 'employe.registration.view' ||  Route::currentRouteName() === 'employe.salary.view' ||  Route::currentRouteName() === 'employe.leave.view' ||  Route::currentRouteName() === 'add.employee.leave' || Route::currentRouteName() === 'edit.employee.leave' || Route::currentRouteName() === 'employe.attendance.view' || Route::currentRouteName() === 'edit.employee.attendance' || Route::currentRouteName() === 'details.employee.attendance' || Route::currentRouteName() === 'employe.monthly.salary' ? 'active' : '' }}">
           <a href="#">
             <i data-feather="message-circle"></i>
             <span>Employee Management</span>
@@ -109,6 +109,7 @@
             <li><a href="{{ route('employe.salary.view')}}"><i class="ti-more"></i>Employee Salary</a></li>
             <li><a href="{{ route('employe.leave.view')}}"><i class="ti-more"></i>Employee Leave</a></li>
             <li><a href="{{ route('employe.attendance.view')}}"><i class="ti-more"></i>Employee Attendance</a></li>
+            <li><a href="{{ route('employe.monthly.salary')}}"><i class="ti-more"></i>Employee Monthly Salary</a></li>
           </ul>
         </li>
 			  
